@@ -31,15 +31,21 @@ ui <- fluidPage(
     tabPanel("Information",
              sidebarLayout(
                sidebarPanel(
-                 h4("This is an introduction to the Santa Monica Beach Restoration Pilot Project."
+                 h4("This is a summary of information from the Santa Monica 
+                    Beach Restoration Pilot Project."
                    
-                 ) # end h4
+                 ), # end h4
+                 h6("INSERT SIDE PANEL BULLETS HERE"
+                   
+                 ), # end h6
                  
                ), # end sidebarPanel
                
                mainPanel(
                  h5("Shiny App created by Karina Johnston, Science Director, The Bay Foundation"),
-                 
+                 h6("INSERT MAIN PANEL TEXT HERE"),
+                 img(src = "pathview_verbena.jpg", 
+                     height = 283, width = 515),
                  
                ) # end mainPanel
                
