@@ -1,10 +1,17 @@
+# This web application highlights a living shoreline project implemented by The Bay Foundation and known as the Santa Monica Beach Restoration Pilot Project. TBF has collected 5 years of post restoration data.
+# Author: Karina Johnston, kjohnston@santamonicabay.org
+
+
+# Attach packages
 library(shiny)
 library(tidyverse)
 
+
+# This section includes the inputs from the user interface section 
 ui <- fluidPage(
 
     # Application title
-    titlePanel("INSERT TITLE"),
+    titlePanel("Santa Monica Beach Restoration Pilot Project"),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
@@ -23,17 +30,12 @@ ui <- fluidPage(
     )
 )
 
-# Define server logic required to draw a histogram
+
+# This section includes the server logic for the output commands
 server <- function(input, output) {
 
-    output$distPlot <- renderPlot({
-        # generate bins based on input$bins from ui.R
-        x    <- faithful[, 2]
-        bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-        # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'darkgray', border = 'white')
-    })
+    
+  
 }
 
 # Run the application 
