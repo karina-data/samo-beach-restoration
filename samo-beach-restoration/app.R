@@ -42,10 +42,15 @@ ui <- fluidPage(
                ), # end sidebarPanel
                
                mainPanel(
-                 h5("Shiny App created by Karina Johnston, Science Director, The Bay Foundation"),
-                 h6("INSERT MAIN PANEL TEXT HERE"),
+                 h4("Shiny App created by Karina Johnston, Science Director, The Bay Foundation"),
+                 h5("The Bay Foundation (TBF) restored approximately three acres of plants adapted to live on the beach very close to the shoreline for the project. Living on the ocean’s edge, this community of plants attracted insects and birds, and adapted to the harsh conditions of beach life, including salt spray, wind, and intense sunlight."),
+                
+                 h5("As the plants of the coastal strand habitat grow, they capture windblown sand beneath their branches and leaves. Over time, they build sand dunes that prevent waves and extreme tides from flooding the beach and nearby infrastructure. By reestablishing this habitat, TBF and its partners are able to enhance beaches that are naturally resistant to sea level rise, while creating refuge for endangered species and adding natural beauty to our beaches."),
+                
+                 h5("This interactive web application displays trends from five-years of project data. For more information: www.santamonicabay.org or email kjohnston@santamonicabay.org."),
+                 
                  img(src = "pathview_verbena.jpg", 
-                     height = 283, width = 515),
+                     height = 283, width = 515)
                  
                ) # end mainPanel
                
@@ -69,11 +74,7 @@ ui <- fluidPage(
                                      "Species 4" = 4,
                                      "Species 5" = 5,
                                      "All plant species" = 6), 
-                      selected = 1),
-          
-          hr(),
-          fluidRow(column(6, verbatimTextOutput("value"))
-                   ) # end selectInput
+                      selected = 1), # end selectInput
           
         ), # end sidebarPanel
 
@@ -92,6 +93,15 @@ ui <- fluidPage(
     tabPanel("Plant Cover",
       sidebarLayout(
         sidebarPanel(
+          fluidRow(
+            column(12,
+                   
+                   # Slider bar 
+                   sliderInput("slider1", label = h3("Slider"), min = 0, 
+                               max = 100, value = 50)
+            )
+            
+          ), # end fluidRow
           
         ), # end sidebarPanel
         
@@ -109,6 +119,16 @@ ui <- fluidPage(
     tabPanel("Topography Profiles",
              sidebarLayout(
                sidebarPanel(
+                 checkboxGroupInput("checkGroup", label = h3("Checkbox group"), 
+                                    choices = list("Dec 2016" = 1, 
+                                                   "Jun 2017" = 2, 
+                                                   "Nov 2017" = 3,
+                                                   "Jun 2018" = 4,
+                                                   "Nov 2018" = 5,
+                                                   "Jun 2019" = 6,
+                                                   "Nov 2019" = 7,
+                                                   "Jun 2020" = 8),
+                                    selected = 1),
                  
                ), # end sidebarPanel
                
