@@ -1,21 +1,21 @@
-Category,Family,Scientific Name,Common Name,Frequency
-Shorebird,Charadriidae,Charadrius alexandrinus nivosus,Western Snowy Plover,High
-Shorebird,Charadriidae,Charadrius vociferus,Killdeer,Low
-Shorebird,Scolopacidae,Numenius phaeopus,Whimbrel,Medium
-Shorebird,Scolopacidae,Tringa semipalmata,Willet,High
-Shorebird,Scolopacidae,Calidris alba,Sanderling,High
-Shorebird,Scolopacidae,Limosa fedoa,Marbled Godwit,Low
-Shorebird,Scolopacidae,Numenius americanus,Long-billed Curlew,Low
-Shorebird,Laridae,Thalasseus spp,Tern,Low
-Open Water,Anatidae,Melanitta perspicillata,Surf Scoter,Low
-Open Water,Pelecanidae,Pelecanus occidentalis californicus,CA Brown Pelican,Medium
-Open Water,Phalacrocoracidae,Phalacrocoracidae,Cormorant,Medium
-Gull,Laridae,Larus californicus,California Gull,High
-Gull,Laridae,Larus delawarensis,Ring-billed Gull,High
-Gull,Laridae,Larus occidentalis,Western Gull,High
-Gull,Laridae,Larus heermanni,Heermann’s Gull,High
-Urban,Anatidae,Branta canadensis,Canada Goose,Low
-Urban,Corvidae,Corvus brachyrhynchos,American Crow,High
-Urban,Columbidae,Columba livia,Rock Pigeon (Feral Pigeon),Low
-Raptor,Falconidae,Falco peregrinus,Peregrine Falcon,Low
-Raptor,Pandionidae,Pandion haliaetus,Osprey,Low
+Category,Family,Scientific Name,Common Name,Frequency,Node
+Shorebird,Charadriidae,Charadrius alexandrinus nivosus,Western Snowy Plover,High,1
+Shorebird,Charadriidae,Charadrius vociferus,Killdeer,Low,1
+Shorebird,Scolopacidae,Numenius phaeopus,Whimbrel,Medium,1
+Shorebird,Scolopacidae,Tringa semipalmata,Willet,High,1
+Shorebird,Scolopacidae,Calidris alba,Sanderling,High,1
+Shorebird,Scolopacidae,Limosa fedoa,Marbled Godwit,Low,1
+Shorebird,Scolopacidae,Numenius americanus,Long-billed Curlew,Low,1
+Shorebird,Laridae,Thalasseus spp,Tern,Low,1
+Open Water,Anatidae,Melanitta perspicillata,Surf Scoter,Low,1
+Open Water,Pelecanidae,Pelecanus occidentalis californicus,CA Brown Pelican,Medium,1
+Open Water,Phalacrocoracidae,Phalacrocoracidae,Cormorant,Medium,1
+Gull,Laridae,Larus californicus,California Gull,High,1
+Gull,Laridae,Larus delawarensis,Ring-billed Gull,High,1
+Gull,Laridae,Larus occidentalis,Western Gull,High,1
+Gull,Laridae,Larus heermanni,Heermann’s Gull,High,1
+Urban,Anatidae,Branta canadensis,Canada Goose,Low,1
+Urban,Corvidae,Corvus brachyrhynchos,American Crow,High,1
+Urban,Columbidae,Columba livia,Rock Pigeon,Low,1
+Raptor,Falconidae,Falco peregrinus,Peregrine Falcon,Low,1
+Raptor,Pandionidae,Pandion haliaetus,Osprey,Low,1

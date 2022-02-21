@@ -10,7 +10,7 @@ library(shinythemes)
 library(collapsibleTree)
 
 # Read in the data
-birds <- read_csv(here("data", "birds.csv"))
+birds <- read_csv(here("samo-beach-restoration", "data", "birds.csv"))
 # plant_cover <- read_csv(here("data", "samo_vegetation_master.csv"))
 # elev_profile <- read_csv(here("data", "elev_profile_master.csv"))
 
@@ -158,11 +158,12 @@ ui <- fluidPage(
                    "hierarchy", "Tree hierarchy",
                    choices = c(
                      "Category", "Family", "Scientific Name",
-                     "Common Name", "Frequency"),
-                   selected = c("Category","Family"),
+                     "Common Name"),
+                   selected = c("Category","Family", "Scientific Name"),
                    multiple = TRUE
                  ), # end selectInput
                  
+       
                  h6("INSERT TEXT HERE FOR BIRDS"),
                ), # end sidebarPanel
                
@@ -208,11 +209,11 @@ server <- function(input, output) {
 
   output$plot <- renderCollapsibleTree({
     collapsibleTreeSummary(
-      data = birds,
+      birds,
       hierarchy = input$hierarchy,
-      inputId = "node",
-      root = input$fill,
-      attribute = input$fill
+      inputId = "node"
+#      root = input$fill
+#      attribute = input$fill
     )
   })
   
