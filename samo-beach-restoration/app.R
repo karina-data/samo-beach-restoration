@@ -7,8 +7,10 @@ library(shiny)
 library(tidyverse)
 library(here)
 library(shinythemes)
+library(collapsibleTree)
 
 # Read in the data
+birds <- read_csv(here("data", "birds.csv"))
 # plant_cover <- read_csv(here("data", "samo_vegetation_master.csv"))
 # elev_profile <- read_csv(here("data", "elev_profile_master.csv"))
 
@@ -31,15 +33,15 @@ ui <- fluidPage(
     tabPanel("Information",
              sidebarLayout(
                sidebarPanel(
-                 h4("This web app summarizes information from the Santa Monica 
-                    Beach Restoration Pilot Project."
+                 h4("This web app visualizes five years of data from the Santa Monica 
+                    Beach Restoration Pilot Project"
                    
                  ), # end h4
                  h6("- Installed in 2016"),
                  h6("- Led by: The Bay Foundation"),
                  h6("- Partners: City of Santa Monica, California State Parks, Audubon Society"),
-                 h6("- Funded by: US Environmenal Protection Agency and Annenberg Foundation"),
-                 h6("- Five years after implementation"),
+                 h6("- Funded by: US Environmental Protection Agency and Annenberg Foundation"),
+#                 h6("- Five years after implementation"),
                  
                ), # end sidebarPanel
                
@@ -48,8 +50,11 @@ ui <- fluidPage(
                  h5("The Bay Foundation (TBF) restored approximately three acres beach adjacent to the ocean, by seeding four species of native plants adapted to live in this habitat area. Living on the ocean’s edge, this community of plants attracted insects and birds, and adapted to the harsh conditions of beach life, including salt spray, wind, and intense sunlight."),
                 
                  h5("As the plants of the coastal strand habitat grow, they capture windblown sand beneath their branches and leaves. Over time, they build sand dunes that prevent waves and extreme tides from flooding the beach and nearby infrastructure. By reestablishing this habitat, TBF and its partners are able to enhance beaches that are naturally resistant to sea level rise, while creating refuge for endangered species and adding natural beauty to our beaches."),
-                
-                 h5("This interactive web application displays trends from five-years of project data. For more information: www.santamonicabay.org or email kjohnston@santamonicabay.org."),
+                 
+                 h5("This interactive web application displays trends from five-years of project data. The goal is to help visualize and understand biological and physical restoration trajectories. For more information:"),
+                    a(href="www.santamonicabay.org", "www.santamonicabay.org"),
+                 br(),
+                    a(href="kjohnston@santamonicabay.org", "kjohnston@santamonicabay.org"),
                  
                  img(src = "pathview_verbena.jpg", 
                      height = 283, width = 515)
@@ -149,12 +154,24 @@ ui <- fluidPage(
              sidebarLayout(
                sidebarPanel(
                  
+                 selectInput(
+                   "hierarchy", "Tree hierarchy",
+                   choices = c(
+                     "Category", "Family", "Scientific Name",
+                     "Common Name", "Frequency"),
+                   selected = c("Category","Family"),
+                   multiple = TRUE
+                 ), # end selectInput
+                 
+                 h6("INSERT TEXT HERE FOR BIRDS"),
                ), # end sidebarPanel
                
-               mainPanel(
-                 
-               ) # end mainPanel
                
+               # Show a tree diagram with the selected root node
+               mainPanel(
+                 collapsibleTreeOutput("plot", height = "500px")
+               ) # end mainPanel
+                 
              ) # end sidebarLayout
              
     ), # end tabPanel page 5
@@ -189,6 +206,16 @@ ui <- fluidPage(
 # This section includes the server logic for the output commands
 server <- function(input, output) {
 
+  output$plot <- renderCollapsibleTree({
+    collapsibleTreeSummary(
+      data = birds,
+      hierarchy = input$hierarchy,
+      inputId = "node",
+      root = input$fill,
+      attribute = input$fill
+    )
+  })
+  
   output$value <- renderPrint({ input$select })
   
 } # end server function
