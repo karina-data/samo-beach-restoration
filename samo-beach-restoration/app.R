@@ -31,19 +31,21 @@ ui <- fluidPage(
     tabPanel("Information",
              sidebarLayout(
                sidebarPanel(
-                 h4("This is a summary of information from the Santa Monica 
+                 h4("This web app summarizes information from the Santa Monica 
                     Beach Restoration Pilot Project."
                    
                  ), # end h4
-                 h6("INSERT SIDE PANEL BULLETS HERE"
-                   
-                 ), # end h6
+                 h6("- Installed in 2016"),
+                 h6("- Led by: The Bay Foundation"),
+                 h6("- Partners: City of Santa Monica, California State Parks, Audubon Society"),
+                 h6("- Funded by: US Environmenal Protection Agency and Annenberg Foundation"),
+                 h6("- Five years after implementation"),
                  
                ), # end sidebarPanel
                
                mainPanel(
                  h4("Shiny App created by Karina Johnston, Science Director, The Bay Foundation"),
-                 h5("The Bay Foundation (TBF) restored approximately three acres of plants adapted to live on the beach very close to the shoreline for the project. Living on the ocean’s edge, this community of plants attracted insects and birds, and adapted to the harsh conditions of beach life, including salt spray, wind, and intense sunlight."),
+                 h5("The Bay Foundation (TBF) restored approximately three acres beach adjacent to the ocean, by seeding four species of native plants adapted to live in this habitat area. Living on the ocean’s edge, this community of plants attracted insects and birds, and adapted to the harsh conditions of beach life, including salt spray, wind, and intense sunlight."),
                 
                  h5("As the plants of the coastal strand habitat grow, they capture windblown sand beneath their branches and leaves. Over time, they build sand dunes that prevent waves and extreme tides from flooding the beach and nearby infrastructure. By reestablishing this habitat, TBF and its partners are able to enhance beaches that are naturally resistant to sea level rise, while creating refuge for endangered species and adding natural beauty to our beaches."),
                 
