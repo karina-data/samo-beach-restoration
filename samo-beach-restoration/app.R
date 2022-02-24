@@ -10,11 +10,15 @@ library(here)
 library(shinythemes)
 library(collapsibleTree)
 library(colorspace)
+library(lubridate)
+library(shinyWidgets)
+
 
 # Read in the data
 birds <- read_csv(here("samo-beach-restoration", "data", "birds.csv"))
 elevation_rest <- read_csv(here("samo-beach-restoration", "data", "elevation.csv")) %>% 
   filter(type == "restoration")
+
 # elevation_ctrl <- read_csv(here("samo-beach-restoration", "data", "elevation.csv")) %>%
 #   filter(type == "control")
 
@@ -80,7 +84,69 @@ ui <- fluidPage(
     ), # end tabPanel page 1
     
     
-    #### PAGE 2 ####
+#### PAGE 2 ####
+
+tabPanel("Topography Profiles",
+         sidebarLayout(
+           sidebarPanel(
+             pickerInput(inputId = "season_year", 
+                         label = h3("Select Survey(s)"), 
+                                choices = list("Winter 2016" = 1, 
+                                               "Summer 2017" = 2, 
+                                               "Winter 2017" = 3,
+                                               "Summer 2018" = 4,
+                                               "Winter 2018" = 5,
+                                               "Summer 2019" = 6,
+                                               "Winter 2019" = 7,
+                                               "Summer 2020" = 8,
+                                               "Winter 2020" = 9,
+                                               "Summer 2021" = 10),
+                         multiple = TRUE), # end pickerInput
+             
+             h5("This checkbox selects elevation profile data starting from the back of the beach (lefthand side of the graph) to the ocean (righthand side). Data begin at the baseline in 2016 and show an increase in elevation over time, as well as the formation of small dunes."),
+             
+           ), # end sidebarPanel
+           
+           mainPanel(
+             plotOutput("elevProfile", height = "250px", width = "700px")
+           ) # end mainPanel
+           
+         ) # end sidebarLayout
+         
+), # end tabPanel page 2
+
+
+#### PAGE 3 ####
+
+tabPanel("Birds",
+         sidebarLayout(
+           sidebarPanel(
+             
+             selectInput(
+               "hierarchy", "Tree hierarchy",
+               choices = c(
+                 "Category", "Scientific Name", "Family", "Common Name"),
+               selected = c("Category", "Scientific Name"),
+               multiple = TRUE
+             ), # end selectInput
+             
+             
+             h5("This collapsible tree shows bird species identified on site between 2016-2021. It is not a comprehensive list of bird species presence; rather, it is intended to be representative of species identified on surveys."),
+           ), # end sidebarPanel
+           
+           
+           # Show a tree diagram with the selected root node
+           mainPanel(
+             collapsibleTreeOutput("tree", height = "500px")
+           ) # end mainPanel
+           
+         ) # end sidebarLayout
+         
+), # end tabPanel page 3
+
+
+
+    #### PAGE 4 ####
     
     tabPanel("Plant Species Maps",
       
@@ -106,9 +172,10 @@ ui <- fluidPage(
         
     ) # end sidebarLayout
 
-    ), # end tabPanel page 2
+    ), # end tabPanel page 4
 
-    #### PAGE 3 ####
+
+    #### PAGE 5 ####
     
     tabPanel("Plant Cover",
       sidebarLayout(
@@ -131,78 +198,21 @@ ui <- fluidPage(
         
       ) # end sidebarLayout
       
-    ), # end tabPanel page 3
+    ), # end tabPanel page 5
 
     
-    #### PAGE 4 ####
-    
-    tabPanel("Topography Profiles",
-             sidebarLayout(
-               sidebarPanel(
-                 checkboxGroupInput("checkGroup", label = h3("Select Survey Dates"), 
-                                    choices = list("Dec 2016" = 1, 
-                                                   "Jun 2017" = 2, 
-                                                   "Nov 2017" = 3,
-                                                   "Jun 2018" = 4,
-                                                   "Nov 2018" = 5,
-                                                   "Jun 2019" = 6,
-                                                   "Nov 2019" = 7,
-                                                   "Jun 2020" = 8),
-                                    selected = 1:8),
-                 
-                 h5("This checkbox selects elevation profile data starting from the back of the beach (lefthand side of the graph) to the ocean (righthand side). Data begin at the baseline in 2016 and show an increase in elevation over time, as well as the formation of small dunes."),
-                 
-               ), # end sidebarPanel
-               
-               mainPanel(
-                 plotOutput("elevProfile", height = "300px", width = "750px")
-               ) # end mainPanel
-               
-             ) # end sidebarLayout
-             
-    ), # end tabPanel page 4
-    
-    
-    #### PAGE 5 ####
-    
-    tabPanel("Birds",
-             sidebarLayout(
-               sidebarPanel(
-                 
-                 selectInput(
-                   "hierarchy", "Tree hierarchy",
-                   choices = c(
-                     "Category", "Scientific Name", "Family", "Common Name"),
-                   selected = c("Category", "Scientific Name"),
-                   multiple = TRUE
-                 ), # end selectInput
-                 
-       
-                 h5("This collapsible tree shows bird species identified on site between 2016-2021. It is not a comprehensive list of bird species presence; rather, it is intended to be representative of species identified on surveys."),
-               ), # end sidebarPanel
-               
-               
-               # Show a tree diagram with the selected root node
-               mainPanel(
-                 collapsibleTreeOutput("tree", height = "500px")
-               ) # end mainPanel
-                 
-             ) # end sidebarLayout
-             
-    ), # end tabPanel page 5
-    
-    
+
     #### PAGE 6 ####
     
     tabPanel("Photographs",
              sidebarLayout(
                sidebarPanel(
-                 h4("This page shows a series of project photographs beginning before implementation (first photo), then a week after the sand fence and seeds went in (second photo), and the rest were taken in January 2022, just over five years after implementation, with small dunes throughout the site."
+                 h5("This page shows a series of project photographs beginning before implementation (first photo), then a week after the sand fence and seeds went in (second photo), and the rest were taken in January 2022, just over five years after implementation, with small dunes throughout the site."
                     
                  ), # end h4
                  
                  br(),
-                 h4("For more information, project reports, and documents, please visit:"), # end h4
+                 h5("For more information, project reports, and documents, please visit:"), # end h4
                  a(href="www.santamonicabay.org", "www.santamonicabay.org"),
                  br(),
                  h6("Photo credit: The Bay Foundation"),
@@ -255,8 +265,31 @@ ui <- fluidPage(
                
              ) # end sidebarLayout
              
-    ) # end tabPanel page 6
+    ), # end tabPanel page 6
+
    
+    #### PAGE 7 ####
+
+    tabPanel("Citations",
+         sidebarLayout(
+           sidebarPanel(
+             h5("This page contains citations for the web application development and data.")
+             
+           ), # end sidebarPanel
+           
+           mainPanel(
+             h4("Citations"),
+             h6("citation1"),
+             h6("citation2"),
+             h6("citation3"),
+             h6("citation4.....")
+           ) # end mainPanel
+           
+         ) # end sidebarLayout
+         
+    ), # end tabPanel page 7
+
+
   ) # end navbarPage
   
 ) # end fluidPage
@@ -273,9 +306,13 @@ server <- function(input, output) {
   # Elevation Profile output
   output$elevProfile <- renderPlot({
     
-    ggplot(data = elevation_rest, aes(x = distance_m, y = elevation_m, group = date)) +
-      geom_line(aes(color = date), size = 1.2) +
+    season_year <- input$season_year
+    elevation_rest[elevation_rest$season_year %in% input$season_year,]
+    
+    ggplot(data = elevation_rest, aes(x = distance_m, y = elevation_m, group = season_year)) +
+      geom_line(aes(color = season_year), size = 1.2) +
       labs(x = "Distance (m)", y = "Elevation (m)") +
+      scale_color_discrete(type = "viridis") +
       theme_classic()
   })
 

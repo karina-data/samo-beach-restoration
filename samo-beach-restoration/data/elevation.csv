@@ -1,315 +1,494 @@
-type,sampling,date,distance_m,elevation_m
-restoration,1,2016-12-16,0,3.28
-restoration,1,2016-12-16,5,3.18
-restoration,1,2016-12-16,10,3.18
-restoration,1,2016-12-16,15,3.16
-restoration,1,2016-12-16,20,3.16
-restoration,1,2016-12-16,25,3.16
-restoration,1,2016-12-16,30,3.19
-restoration,1,2016-12-16,35,3.2
-restoration,1,2016-12-16,40,3.22
-restoration,1,2016-12-16,45,3.2
-restoration,1,2016-12-16,50,3.24
-restoration,1,2016-12-16,55,3.12
-restoration,1,2016-12-16,55.7,3.05
-restoration,1,2016-12-16,60.7,2.41
-restoration,1,2016-12-16,65.7,1.57
-restoration,1,2016-12-16,70.7,1.03
-restoration,1,2016-12-16,75.7,0.65
-restoration,1,2016-12-16,80.7,0.41
-restoration,2,2017-03-24,0,3.28
-restoration,2,2017-03-24,3,3.28
-restoration,2,2017-03-24,6,3.26
-restoration,2,2017-03-24,9,3.24
-restoration,2,2017-03-24,12,3.24
-restoration,2,2017-03-24,15,3.26
-restoration,2,2017-03-24,18,3.28
-restoration,2,2017-03-24,21,3.3
-restoration,2,2017-03-24,24,3.34
-restoration,2,2017-03-24,27,3.38
-restoration,2,2017-03-24,30,3.42
-restoration,2,2017-03-24,33,3.48
-restoration,2,2017-03-24,36,3.52
-restoration,2,2017-03-24,39,3.58
-restoration,2,2017-03-24,42,3.62
-restoration,2,2017-03-24,45,3.64
-restoration,2,2017-03-24,48,3.66
-restoration,2,2017-03-24,51,3.7
-restoration,2,2017-03-24,54,3.4
-restoration,2,2017-03-24,57,3.1
-restoration,2,2017-03-24,60,2.56
-restoration,2,2017-03-24,63,2.08
-restoration,2,2017-03-24,66,1.72
-restoration,2,2017-03-24,69,1.46
-restoration,2,2017-03-24,72,1.22
-restoration,3,2018-02-13,0,3.591
-restoration,3,2018-02-13,3,3.451
-restoration,3,2018-02-13,6,3.411
-restoration,3,2018-02-13,9,3.371
-restoration,3,2018-02-13,12,3.321
-restoration,3,2018-02-13,15,3.311
-restoration,3,2018-02-13,18,3.291
-restoration,3,2018-02-13,21,3.281
-restoration,3,2018-02-13,24,3.281
-restoration,3,2018-02-13,27,3.281
-restoration,3,2018-02-13,30,3.291
-restoration,3,2018-02-13,33,3.301
-restoration,3,2018-02-13,36,3.311
-restoration,3,2018-02-13,39,3.331
-restoration,3,2018-02-13,42,3.341
-restoration,3,2018-02-13,45,3.351
-restoration,3,2018-02-13,48,3.331
-restoration,3,2018-02-13,51,3.301
-restoration,3,2018-02-13,54,3.131
-restoration,3,2018-02-13,57,3.121
-restoration,3,2018-02-13,60,2.761
-restoration,3,2018-02-13,63,2.181
-restoration,3,2018-02-13,66,1.601
-restoration,4,2018-12-14,0,4.26
-restoration,4,2018-12-14,3,4.05
-restoration,4,2018-12-14,6,3.97
-restoration,4,2018-12-14,9,3.93
-restoration,4,2018-12-14,12,3.9
-restoration,4,2018-12-14,15,3.88
-restoration,4,2018-12-14,18,3.88
-restoration,4,2018-12-14,21,3.86
-restoration,4,2018-12-14,24,3.87
-restoration,4,2018-12-14,27,3.87
-restoration,4,2018-12-14,30,3.86
-restoration,4,2018-12-14,33,3.87
-restoration,4,2018-12-14,36,3.87
-restoration,4,2018-12-14,39,3.94
-restoration,4,2018-12-14,42,3.88
-restoration,4,2018-12-14,45,3.86
-restoration,4,2018-12-14,48,3.85
-restoration,4,2018-12-14,51,3.82
-restoration,4,2018-12-14,54,3.85
-restoration,4,2018-12-14,57,3.79
-restoration,4,2018-12-14,60,3.07
-restoration,4,2018-12-14,63,2.4
-restoration,4,2018-12-14,66,1.87
-restoration,4,2018-12-14,69,1.45
-restoration,5,2019-11-06,0,4.436
-restoration,5,2019-11-06,3,4.046
-restoration,5,2019-11-06,6,3.936
-restoration,5,2019-11-06,9,3.886
-restoration,5,2019-11-06,12,3.846
-restoration,5,2019-11-06,15,3.826
-restoration,5,2019-11-06,18,3.826
-restoration,5,2019-11-06,21,3.816
-restoration,5,2019-11-06,24,3.816
-restoration,5,2019-11-06,27,3.846
-restoration,5,2019-11-06,30,3.866
-restoration,5,2019-11-06,33,3.856
-restoration,5,2019-11-06,36,3.806
-restoration,5,2019-11-06,39,3.856
-restoration,5,2019-11-06,42,3.806
-restoration,5,2019-11-06,45,3.776
-restoration,5,2019-11-06,48,3.786
-restoration,5,2019-11-06,51,3.726
-restoration,5,2019-11-06,54,3.396
-restoration,5,2019-11-06,57,3.146
-restoration,5,2019-11-06,60,2.926
-restoration,5,2019-11-06,63,2.606
-restoration,5,2019-11-06,66,2.246
-restoration,5,2019-11-06,69,1.836
-restoration,5,2019-11-06,72,1.566
-restoration,5,2019-11-06,75,1.236
-restoration,5,2019-11-06,78,0.986
-restoration,5,2019-11-06,81,0.826
-restoration,6,2020-10-30,0,4.511
-restoration,6,2020-10-30,3,4.371
-restoration,6,2020-10-30,6,4.291
-restoration,6,2020-10-30,9,4.231
-restoration,6,2020-10-30,12,4.211
-restoration,6,2020-10-30,15,4.161
-restoration,6,2020-10-30,18,4.141
-restoration,6,2020-10-30,21,4.131
-restoration,6,2020-10-30,24,4.141
-restoration,6,2020-10-30,27,4.151
-restoration,6,2020-10-30,30,4.131
-restoration,6,2020-10-30,33,4.091
-restoration,6,2020-10-30,36,4.061
-restoration,6,2020-10-30,39,4.041
-restoration,6,2020-10-30,42,4.081
-restoration,6,2020-10-30,45,4.051
-restoration,6,2020-10-30,48,4.041
-restoration,6,2020-10-30,51,3.731
-restoration,6,2020-10-30,54,3.611
-restoration,6,2020-10-30,57,3.471
-restoration,6,2020-10-30,60,3.321
-restoration,6,2020-10-30,63,3.191
-restoration,6,2020-10-30,66,2.811
-restoration,6,2020-10-30,69,2.381
-restoration,6,2020-10-30,72,2.031
-restoration,6,2020-10-30,75,1.701
-restoration,7,2021-05-21,0,4.773
-restoration,7,2021-05-21,3,4.623
-restoration,7,2021-05-21,6,4.573
-restoration,7,2021-05-21,9,4.523
-restoration,7,2021-05-21,12,4.493
-restoration,7,2021-05-21,15,4.473
-restoration,7,2021-05-21,18,4.453
-restoration,7,2021-05-21,21,4.443
-restoration,7,2021-05-21,24,4.533
-restoration,7,2021-05-21,27,4.133
-restoration,7,2021-05-21,30,4.093
-restoration,7,2021-05-21,33,4.033
-restoration,7,2021-05-21,36,4.003
-restoration,7,2021-05-21,39,4.073
-restoration,7,2021-05-21,42,3.963
-restoration,7,2021-05-21,45,3.913
-restoration,7,2021-05-21,48,3.893
-restoration,7,2021-05-21,51,3.833
-restoration,7,2021-05-21,54,3.593
-restoration,7,2021-05-21,57,3.323
-restoration,7,2021-05-21,60,3.033
-restoration,7,2021-05-21,63,2.923
-restoration,7,2021-05-21,66,2.783
-restoration,7,2021-05-21,69,2.593
-restoration,7,2021-05-21,72,2.043
-restoration,7,2021-05-21,75,1.713
-restoration,7,2021-05-21,78,1.423
-restoration,7,2021-05-21,81,1.143
-restoration,7,2021-05-21,84,0.913
-restoration,7,2021-05-21,87,0.713
-control,1,2016-12-13,0,3.595
-control,1,2016-12-13,0,3.595
-control,1,2016-12-13,5,3.475
-control,1,2016-12-13,10,3.535
-control,1,2016-12-13,15,3.535
-control,1,2016-12-13,20,3.555
-control,1,2016-12-13,25,3.535
-control,1,2016-12-13,30,3.575
-control,1,2016-12-13,35,3.515
-control,1,2016-12-13,40,3.515
-control,1,2016-12-13,45,3.495
-control,1,2016-12-13,50,3.495
-control,1,2016-12-13,54.2,3.595
-control,1,2016-12-13,56.4,2.955
-control,1,2016-12-13,61,1.795
-control,2,2017-03-24,0,3.595
-control,2,2017-03-24,3,3.505
-control,2,2017-03-24,6,3.435
-control,2,2017-03-24,9,3.445
-control,2,2017-03-24,12,3.435
-control,2,2017-03-24,15,3.475
-control,2,2017-03-24,18,3.475
-control,2,2017-03-24,21,3.595
-control,2,2017-03-24,24,3.575
-control,2,2017-03-24,27,3.575
-control,2,2017-03-24,30,3.575
-control,2,2017-03-24,33,3.655
-control,2,2017-03-24,36,3.655
-control,2,2017-03-24,39,3.615
-control,2,2017-03-24,42,3.595
-control,2,2017-03-24,45,3.655
-control,2,2017-03-24,48,3.615
-control,2,2017-03-24,51,3.475
-control,2,2017-03-24,54,3.155
-control,2,2017-03-24,57,2.835
-control,2,2017-03-24,60,2.375
-control,2,2017-03-24,63,1.955
-control,3,2018-12-14,0,3.87
-control,3,2018-12-14,3,3.84
-control,3,2018-12-14,6,3.79
-control,3,2018-12-14,9,3.75
-control,3,2018-12-14,12,3.74
-control,3,2018-12-14,15,3.74
-control,3,2018-12-14,18,3.7
-control,3,2018-12-14,21,3.69
-control,3,2018-12-14,24,3.69
-control,3,2018-12-14,27,3.66
-control,3,2018-12-14,30,3.65
-control,3,2018-12-14,33,3.66
-control,3,2018-12-14,36,3.67
-control,3,2018-12-14,39,3.68
-control,3,2018-12-14,42,3.67
-control,3,2018-12-14,45,3.63
-control,3,2018-12-14,48,3.58
-control,3,2018-12-14,51,3.55
-control,3,2018-12-14,54,3.45
-control,3,2018-12-14,57,3.31
-control,3,2018-12-14,60,2.98
-control,3,2018-12-14,63,2.37
-control,3,2018-12-14,66,1.85
-control,3,2018-12-14,69,1.44
-control,4,2019-11-06,0,4.105
-control,4,2019-11-06,3,4.045
-control,4,2019-11-06,6,4.075
-control,4,2019-11-06,9,4.045
-control,4,2019-11-06,12,4.035
-control,4,2019-11-06,15,4.045
-control,4,2019-11-06,18,4.065
-control,4,2019-11-06,21,4.065
-control,4,2019-11-06,24,4.075
-control,4,2019-11-06,27,4.085
-control,4,2019-11-06,30,4.085
-control,4,2019-11-06,33,4.085
-control,4,2019-11-06,36,4.085
-control,4,2019-11-06,39,4.065
-control,4,2019-11-06,42,4.045
-control,4,2019-11-06,45,3.995
-control,4,2019-11-06,48,3.895
-control,4,2019-11-06,51,3.755
-control,4,2019-11-06,54,3.645
-control,4,2019-11-06,57,3.525
-control,4,2019-11-06,60,3.425
-control,4,2019-11-06,63,3.155
-control,4,2019-11-06,66,2.745
-control,4,2019-11-06,69,2.305
-control,4,2019-11-06,72,1.995
-control,4,2019-11-06,75,1.665
-control,4,2019-11-06,78,1.395
-control,5,2020-10-30,0,4.004
-control,5,2020-10-30,3,3.964
-control,5,2020-10-30,6,3.954
-control,5,2020-10-30,9,3.944
-control,5,2020-10-30,12,3.914
-control,5,2020-10-30,15,3.894
-control,5,2020-10-30,18,3.864
-control,5,2020-10-30,21,3.834
-control,5,2020-10-30,24,3.844
-control,5,2020-10-30,27,3.834
-control,5,2020-10-30,30,3.834
-control,5,2020-10-30,33,3.824
-control,5,2020-10-30,36,3.814
-control,5,2020-10-30,39,3.784
-control,5,2020-10-30,42,3.734
-control,5,2020-10-30,45,3.644
-control,5,2020-10-30,48,3.534
-control,5,2020-10-30,51,3.384
-control,5,2020-10-30,54,3.234
-control,5,2020-10-30,57,3.084
-control,5,2020-10-30,60,2.924
-control,5,2020-10-30,63,2.534
-control,5,2020-10-30,66,2.204
-control,5,2020-10-30,69,1.864
-control,6,2021-05-21,0,3.986
-control,6,2021-05-21,3,3.966
-control,6,2021-05-21,6,4.006
-control,6,2021-05-21,9,3.996
-control,6,2021-05-21,12,3.986
-control,6,2021-05-21,15,4.016
-control,6,2021-05-21,18,4.016
-control,6,2021-05-21,21,4.036
-control,6,2021-05-21,24,4.056
-control,6,2021-05-21,27,4.026
-control,6,2021-05-21,30,4.036
-control,6,2021-05-21,33,4.076
-control,6,2021-05-21,36,4.056
-control,6,2021-05-21,39,4.096
-control,6,2021-05-21,42,4.056
-control,6,2021-05-21,45,4.016
-control,6,2021-05-21,48,3.896
-control,6,2021-05-21,51,3.796
-control,6,2021-05-21,54,3.656
-control,6,2021-05-21,57,3.576
-control,6,2021-05-21,60,3.336
-control,6,2021-05-21,63,3.126
-control,6,2021-05-21,66,2.846
-control,6,2021-05-21,69,2.566
-control,6,2021-05-21,72,2.306
-control,6,2021-05-21,75,1.986
-control,6,2021-05-21,78,1.746
-control,6,2021-05-21,81,1.526
+type,date,season_year,season,distance_m,elevation_m
+restoration,12/16/2016,Winter 2016,Winter,0,3.28
+restoration,12/16/2016,Winter 2016,Winter,5,3.18
+restoration,12/16/2016,Winter 2016,Winter,10,3.18
+restoration,12/16/2016,Winter 2016,Winter,15,3.16
+restoration,12/16/2016,Winter 2016,Winter,20,3.16
+restoration,12/16/2016,Winter 2016,Winter,25,3.16
+restoration,12/16/2016,Winter 2016,Winter,30,3.19
+restoration,12/16/2016,Winter 2016,Winter,35,3.2
+restoration,12/16/2016,Winter 2016,Winter,40,3.22
+restoration,12/16/2016,Winter 2016,Winter,45,3.2
+restoration,12/16/2016,Winter 2016,Winter,50,3.24
+restoration,12/16/2016,Winter 2016,Winter,55,3.12
+restoration,12/16/2016,Winter 2016,Winter,55.7,3.05
+restoration,12/16/2016,Winter 2016,Winter,60.7,2.41
+restoration,12/16/2016,Winter 2016,Winter,65.7,1.57
+restoration,12/16/2016,Winter 2016,Winter,70.7,1.03
+restoration,12/16/2016,Winter 2016,Winter,75.7,0.65
+restoration,12/16/2016,Winter 2016,Winter,80.7,0.41
+restoration,9/13/2017,Summer 2017,Summer,0,3.394
+restoration,9/13/2017,Summer 2017,Summer,3,3.374
+restoration,9/13/2017,Summer 2017,Summer,6,3.354
+restoration,9/13/2017,Summer 2017,Summer,9,3.374
+restoration,9/13/2017,Summer 2017,Summer,12,3.434
+restoration,9/13/2017,Summer 2017,Summer,15,3.394
+restoration,9/13/2017,Summer 2017,Summer,18,3.314
+restoration,9/13/2017,Summer 2017,Summer,21,3.354
+restoration,9/13/2017,Summer 2017,Summer,24,3.354
+restoration,9/13/2017,Summer 2017,Summer,27,3.334
+restoration,9/13/2017,Summer 2017,Summer,30,3.434
+restoration,9/13/2017,Summer 2017,Summer,33,3.434
+restoration,9/13/2017,Summer 2017,Summer,36,3.514
+restoration,9/13/2017,Summer 2017,Summer,39,3.494
+restoration,9/13/2017,Summer 2017,Summer,42,3.554
+restoration,9/13/2017,Summer 2017,Summer,45,3.494
+restoration,9/13/2017,Summer 2017,Summer,48,3.574
+restoration,9/13/2017,Summer 2017,Summer,51,3.474
+restoration,9/13/2017,Summer 2017,Summer,54,3.154
+restoration,9/13/2017,Summer 2017,Summer,57,3.114
+restoration,9/13/2017,Summer 2017,Summer,60,3.094
+restoration,9/13/2017,Summer 2017,Summer,63,2.574
+restoration,9/13/2017,Summer 2017,Summer,66,2.014
+restoration,9/13/2017,Summer 2017,Summer,69,1.514
+restoration,9/13/2017,Summer 2017,Summer,72,1.174
+restoration,9/13/2017,Summer 2017,Summer,76,0.974
+restoration,9/13/2017,Summer 2017,Summer,81,0.774
+restoration,2/13/2018,Winter 2017,Winter,0,3.591
+restoration,2/13/2018,Winter 2017,Winter,3,3.451
+restoration,2/13/2018,Winter 2017,Winter,6,3.411
+restoration,2/13/2018,Winter 2017,Winter,9,3.371
+restoration,2/13/2018,Winter 2017,Winter,12,3.321
+restoration,2/13/2018,Winter 2017,Winter,15,3.311
+restoration,2/13/2018,Winter 2017,Winter,18,3.291
+restoration,2/13/2018,Winter 2017,Winter,21,3.281
+restoration,2/13/2018,Winter 2017,Winter,24,3.281
+restoration,2/13/2018,Winter 2017,Winter,27,3.281
+restoration,2/13/2018,Winter 2017,Winter,30,3.291
+restoration,2/13/2018,Winter 2017,Winter,33,3.301
+restoration,2/13/2018,Winter 2017,Winter,36,3.311
+restoration,2/13/2018,Winter 2017,Winter,39,3.331
+restoration,2/13/2018,Winter 2017,Winter,42,3.341
+restoration,2/13/2018,Winter 2017,Winter,45,3.351
+restoration,2/13/2018,Winter 2017,Winter,48,3.331
+restoration,2/13/2018,Winter 2017,Winter,51,3.301
+restoration,2/13/2018,Winter 2017,Winter,54,3.131
+restoration,2/13/2018,Winter 2017,Winter,57,3.121
+restoration,2/13/2018,Winter 2017,Winter,60,2.761
+restoration,2/13/2018,Winter 2017,Winter,63,2.181
+restoration,2/13/2018,Winter 2017,Winter,66,1.601
+restoration,8/15/2018,Summer 2018,Summer,0,3.851
+restoration,8/15/2018,Summer 2018,Summer,3,3.771
+restoration,8/15/2018,Summer 2018,Summer,6,3.761
+restoration,8/15/2018,Summer 2018,Summer,9,3.771
+restoration,8/15/2018,Summer 2018,Summer,12,3.791
+restoration,8/15/2018,Summer 2018,Summer,15,3.771
+restoration,8/15/2018,Summer 2018,Summer,18,3.761
+restoration,8/15/2018,Summer 2018,Summer,21,3.771
+restoration,8/15/2018,Summer 2018,Summer,24,3.781
+restoration,8/15/2018,Summer 2018,Summer,27,3.811
+restoration,8/15/2018,Summer 2018,Summer,30,3.841
+restoration,8/15/2018,Summer 2018,Summer,33,3.831
+restoration,8/15/2018,Summer 2018,Summer,36,3.841
+restoration,8/15/2018,Summer 2018,Summer,39,3.921
+restoration,8/15/2018,Summer 2018,Summer,42,3.861
+restoration,8/15/2018,Summer 2018,Summer,45,3.871
+restoration,8/15/2018,Summer 2018,Summer,48,3.871
+restoration,8/15/2018,Summer 2018,Summer,51,3.871
+restoration,8/15/2018,Summer 2018,Summer,54,3.761
+restoration,8/15/2018,Summer 2018,Summer,57,3.661
+restoration,8/15/2018,Summer 2018,Summer,60,3.651
+restoration,8/15/2018,Summer 2018,Summer,63,2.991
+restoration,8/15/2018,Summer 2018,Summer,66,2.441
+restoration,8/15/2018,Summer 2018,Summer,69,1.931
+restoration,8/15/2018,Summer 2018,Summer,72,1.541
+restoration,8/15/2018,Summer 2018,Summer,75,1.211
+restoration,8/15/2018,Summer 2018,Summer,78,0.991
+restoration,12/14/2018,Winter 2018,Winter,0,4.26
+restoration,12/14/2018,Winter 2018,Winter,3,4.05
+restoration,12/14/2018,Winter 2018,Winter,6,3.97
+restoration,12/14/2018,Winter 2018,Winter,9,3.93
+restoration,12/14/2018,Winter 2018,Winter,12,3.9
+restoration,12/14/2018,Winter 2018,Winter,15,3.88
+restoration,12/14/2018,Winter 2018,Winter,18,3.88
+restoration,12/14/2018,Winter 2018,Winter,21,3.86
+restoration,12/14/2018,Winter 2018,Winter,24,3.87
+restoration,12/14/2018,Winter 2018,Winter,27,3.87
+restoration,12/14/2018,Winter 2018,Winter,30,3.86
+restoration,12/14/2018,Winter 2018,Winter,33,3.87
+restoration,12/14/2018,Winter 2018,Winter,36,3.87
+restoration,12/14/2018,Winter 2018,Winter,39,3.94
+restoration,12/14/2018,Winter 2018,Winter,42,3.88
+restoration,12/14/2018,Winter 2018,Winter,45,3.86
+restoration,12/14/2018,Winter 2018,Winter,48,3.85
+restoration,12/14/2018,Winter 2018,Winter,51,3.82
+restoration,12/14/2018,Winter 2018,Winter,54,3.85
+restoration,12/14/2018,Winter 2018,Winter,57,3.79
+restoration,12/14/2018,Winter 2018,Winter,60,3.07
+restoration,12/14/2018,Winter 2018,Winter,63,2.4
+restoration,12/14/2018,Winter 2018,Winter,66,1.87
+restoration,12/14/2018,Winter 2018,Winter,69,1.45
+restoration,8/1/2019,Summer 2019,Summer,0,3.832
+restoration,8/1/2019,Summer 2019,Summer,3,3.652
+restoration,8/1/2019,Summer 2019,Summer,6,3.642
+restoration,8/1/2019,Summer 2019,Summer,9,3.642
+restoration,8/1/2019,Summer 2019,Summer,12,3.642
+restoration,8/1/2019,Summer 2019,Summer,15,3.642
+restoration,8/1/2019,Summer 2019,Summer,18,3.642
+restoration,8/1/2019,Summer 2019,Summer,21,3.632
+restoration,8/1/2019,Summer 2019,Summer,24,3.672
+restoration,8/1/2019,Summer 2019,Summer,27,3.702
+restoration,8/1/2019,Summer 2019,Summer,30,3.752
+restoration,8/1/2019,Summer 2019,Summer,33,3.722
+restoration,8/1/2019,Summer 2019,Summer,36,3.772
+restoration,8/1/2019,Summer 2019,Summer,39,3.782
+restoration,8/1/2019,Summer 2019,Summer,42,3.762
+restoration,8/1/2019,Summer 2019,Summer,45,3.762
+restoration,8/1/2019,Summer 2019,Summer,48,3.792
+restoration,8/1/2019,Summer 2019,Summer,51,3.772
+restoration,8/1/2019,Summer 2019,Summer,54,3.692
+restoration,8/1/2019,Summer 2019,Summer,57,3.442
+restoration,8/1/2019,Summer 2019,Summer,60,3.162
+restoration,8/1/2019,Summer 2019,Summer,63,2.842
+restoration,8/1/2019,Summer 2019,Summer,66,2.392
+restoration,8/1/2019,Summer 2019,Summer,69,2.042
+restoration,8/1/2019,Summer 2019,Summer,72,1.742
+restoration,11/6/2019,Winter 2019,Winter,0,4.436
+restoration,11/6/2019,Winter 2019,Winter,3,4.046
+restoration,11/6/2019,Winter 2019,Winter,6,3.936
+restoration,11/6/2019,Winter 2019,Winter,9,3.886
+restoration,11/6/2019,Winter 2019,Winter,12,3.846
+restoration,11/6/2019,Winter 2019,Winter,15,3.826
+restoration,11/6/2019,Winter 2019,Winter,18,3.826
+restoration,11/6/2019,Winter 2019,Winter,21,3.816
+restoration,11/6/2019,Winter 2019,Winter,24,3.816
+restoration,11/6/2019,Winter 2019,Winter,27,3.846
+restoration,11/6/2019,Winter 2019,Winter,30,3.866
+restoration,11/6/2019,Winter 2019,Winter,33,3.856
+restoration,11/6/2019,Winter 2019,Winter,36,3.806
+restoration,11/6/2019,Winter 2019,Winter,39,3.856
+restoration,11/6/2019,Winter 2019,Winter,42,3.806
+restoration,11/6/2019,Winter 2019,Winter,45,3.776
+restoration,11/6/2019,Winter 2019,Winter,48,3.786
+restoration,11/6/2019,Winter 2019,Winter,51,3.726
+restoration,11/6/2019,Winter 2019,Winter,54,3.396
+restoration,11/6/2019,Winter 2019,Winter,57,3.146
+restoration,11/6/2019,Winter 2019,Winter,60,2.926
+restoration,11/6/2019,Winter 2019,Winter,63,2.606
+restoration,11/6/2019,Winter 2019,Winter,66,2.246
+restoration,11/6/2019,Winter 2019,Winter,69,1.836
+restoration,11/6/2019,Winter 2019,Winter,72,1.566
+restoration,11/6/2019,Winter 2019,Winter,75,1.236
+restoration,11/6/2019,Winter 2019,Winter,78,0.986
+restoration,11/6/2019,Winter 2019,Winter,81,0.826
+restoration,8/24/2020,Summer 2020,Summer,0,4.252
+restoration,8/24/2020,Summer 2020,Summer,3,4.232
+restoration,8/24/2020,Summer 2020,Summer,6,4.232
+restoration,8/24/2020,Summer 2020,Summer,9,4.232
+restoration,8/24/2020,Summer 2020,Summer,12,4.242
+restoration,8/24/2020,Summer 2020,Summer,15,4.212
+restoration,8/24/2020,Summer 2020,Summer,18,4.222
+restoration,8/24/2020,Summer 2020,Summer,21,4.222
+restoration,8/24/2020,Summer 2020,Summer,24,4.272
+restoration,8/24/2020,Summer 2020,Summer,27,4.322
+restoration,8/24/2020,Summer 2020,Summer,30,4.282
+restoration,8/24/2020,Summer 2020,Summer,33,4.282
+restoration,8/24/2020,Summer 2020,Summer,36,4.302
+restoration,8/24/2020,Summer 2020,Summer,39,4.272
+restoration,8/24/2020,Summer 2020,Summer,42,4.312
+restoration,8/24/2020,Summer 2020,Summer,45,4.302
+restoration,8/24/2020,Summer 2020,Summer,48,4.272
+restoration,8/24/2020,Summer 2020,Summer,51,3.972
+restoration,8/24/2020,Summer 2020,Summer,54,3.772
+restoration,8/24/2020,Summer 2020,Summer,57,3.702
+restoration,8/24/2020,Summer 2020,Summer,60,3.612
+restoration,8/24/2020,Summer 2020,Summer,63,3.412
+restoration,8/24/2020,Summer 2020,Summer,66,3.072
+restoration,8/24/2020,Summer 2020,Summer,69,2.572
+restoration,8/24/2020,Summer 2020,Summer,72,2.172
+restoration,8/24/2020,Summer 2020,Summer,75,1.902
+restoration,10/30/2020,Winter 2020,Winter,0,4.511
+restoration,10/30/2020,Winter 2020,Winter,3,4.371
+restoration,10/30/2020,Winter 2020,Winter,6,4.291
+restoration,10/30/2020,Winter 2020,Winter,9,4.231
+restoration,10/30/2020,Winter 2020,Winter,12,4.211
+restoration,10/30/2020,Winter 2020,Winter,15,4.161
+restoration,10/30/2020,Winter 2020,Winter,18,4.141
+restoration,10/30/2020,Winter 2020,Winter,21,4.131
+restoration,10/30/2020,Winter 2020,Winter,24,4.141
+restoration,10/30/2020,Winter 2020,Winter,27,4.151
+restoration,10/30/2020,Winter 2020,Winter,30,4.131
+restoration,10/30/2020,Winter 2020,Winter,33,4.091
+restoration,10/30/2020,Winter 2020,Winter,36,4.061
+restoration,10/30/2020,Winter 2020,Winter,39,4.041
+restoration,10/30/2020,Winter 2020,Winter,42,4.081
+restoration,10/30/2020,Winter 2020,Winter,45,4.051
+restoration,10/30/2020,Winter 2020,Winter,48,4.041
+restoration,10/30/2020,Winter 2020,Winter,51,3.731
+restoration,10/30/2020,Winter 2020,Winter,54,3.611
+restoration,10/30/2020,Winter 2020,Winter,57,3.471
+restoration,10/30/2020,Winter 2020,Winter,60,3.321
+restoration,10/30/2020,Winter 2020,Winter,63,3.191
+restoration,10/30/2020,Winter 2020,Winter,66,2.811
+restoration,10/30/2020,Winter 2020,Winter,69,2.381
+restoration,10/30/2020,Winter 2020,Winter,72,2.031
+restoration,10/30/2020,Winter 2020,Winter,75,1.701
+restoration,8/13/2021,Summer 2021,Summer,0,4.037
+restoration,8/13/2021,Summer 2021,Summer,3,3.747
+restoration,8/13/2021,Summer 2021,Summer,6,3.717
+restoration,8/13/2021,Summer 2021,Summer,9,3.717
+restoration,8/13/2021,Summer 2021,Summer,12,3.747
+restoration,8/13/2021,Summer 2021,Summer,15,3.737
+restoration,8/13/2021,Summer 2021,Summer,18,3.727
+restoration,8/13/2021,Summer 2021,Summer,21,3.717
+restoration,8/13/2021,Summer 2021,Summer,24,3.737
+restoration,8/13/2021,Summer 2021,Summer,27,3.777
+restoration,8/13/2021,Summer 2021,Summer,30,3.947
+restoration,8/13/2021,Summer 2021,Summer,33,3.937
+restoration,8/13/2021,Summer 2021,Summer,36,3.947
+restoration,8/13/2021,Summer 2021,Summer,39,3.967
+restoration,8/13/2021,Summer 2021,Summer,42,3.857
+restoration,8/13/2021,Summer 2021,Summer,45,3.837
+restoration,8/13/2021,Summer 2021,Summer,48,3.757
+restoration,8/13/2021,Summer 2021,Summer,51,3.697
+restoration,8/13/2021,Summer 2021,Summer,54,3.457
+restoration,8/13/2021,Summer 2021,Summer,57,3.167
+restoration,8/13/2021,Summer 2021,Summer,60,3.007
+restoration,8/13/2021,Summer 2021,Summer,63,2.767
+restoration,8/13/2021,Summer 2021,Summer,66,2.407
+restoration,8/13/2021,Summer 2021,Summer,69,2.057
+restoration,8/13/2021,Summer 2021,Summer,72,1.767
+control,12/13/2016,Winter 2016,Winter,0,3.595
+control,12/13/2016,Winter 2016,Winter,0,3.595
+control,12/13/2016,Winter 2016,Winter,5,3.475
+control,12/13/2016,Winter 2016,Winter,10,3.535
+control,12/13/2016,Winter 2016,Winter,15,3.535
+control,12/13/2016,Winter 2016,Winter,20,3.555
+control,12/13/2016,Winter 2016,Winter,25,3.535
+control,12/13/2016,Winter 2016,Winter,30,3.575
+control,12/13/2016,Winter 2016,Winter,35,3.515
+control,12/13/2016,Winter 2016,Winter,40,3.515
+control,12/13/2016,Winter 2016,Winter,45,3.495
+control,12/13/2016,Winter 2016,Winter,50,3.495
+control,12/13/2016,Winter 2016,Winter,54.2,3.595
+control,12/13/2016,Winter 2016,Winter,56.4,2.955
+control,12/13/2016,Winter 2016,Winter,61,1.795
+control,9/13/2017,Summer 2017,Summer,0,3.595
+control,9/13/2017,Summer 2017,Summer,3,3.415
+control,9/13/2017,Summer 2017,Summer,6,3.415
+control,9/13/2017,Summer 2017,Summer,9,3.355
+control,9/13/2017,Summer 2017,Summer,12,3.335
+control,9/13/2017,Summer 2017,Summer,15,3.295
+control,9/13/2017,Summer 2017,Summer,18,3.265
+control,9/13/2017,Summer 2017,Summer,21,3.275
+control,9/13/2017,Summer 2017,Summer,24,3.305
+control,9/13/2017,Summer 2017,Summer,27,3.255
+control,9/13/2017,Summer 2017,Summer,30,3.295
+control,9/13/2017,Summer 2017,Summer,33,3.285
+control,9/13/2017,Summer 2017,Summer,36,3.295
+control,9/13/2017,Summer 2017,Summer,39,3.275
+control,9/13/2017,Summer 2017,Summer,42,3.315
+control,9/13/2017,Summer 2017,Summer,45,3.325
+control,9/13/2017,Summer 2017,Summer,48,3.325
+control,9/13/2017,Summer 2017,Summer,51,3.295
+control,9/13/2017,Summer 2017,Summer,54,3.215
+control,9/13/2017,Summer 2017,Summer,57,3.135
+control,9/13/2017,Summer 2017,Summer,60,3.015
+control,9/13/2017,Summer 2017,Summer,63,2.915
+control,9/13/2017,Summer 2017,Summer,66,2.855
+control,9/13/2017,Summer 2017,Summer,69,2.735
+control,9/13/2017,Summer 2017,Summer,72,2.185
+control,9/13/2017,Summer 2017,Summer,75,1.635
+control,9/13/2017,Summer 2017,Summer,78,1.255
+control,9/13/2017,Summer 2017,Summer,81,0.955
+control,2/13/2018,Winter 2017,Winter,0,3.252
+control,2/13/2018,Winter 2017,Winter,3,3.232
+control,2/13/2018,Winter 2017,Winter,6,3.222
+control,2/13/2018,Winter 2017,Winter,9,3.192
+control,2/13/2018,Winter 2017,Winter,12,3.182
+control,2/13/2018,Winter 2017,Winter,15,3.152
+control,2/13/2018,Winter 2017,Winter,18,3.142
+control,2/13/2018,Winter 2017,Winter,21,3.152
+control,2/13/2018,Winter 2017,Winter,24,3.162
+control,2/13/2018,Winter 2017,Winter,27,3.172
+control,2/13/2018,Winter 2017,Winter,30,3.212
+control,2/13/2018,Winter 2017,Winter,33,3.202
+control,2/13/2018,Winter 2017,Winter,36,3.222
+control,2/13/2018,Winter 2017,Winter,39,3.232
+control,2/13/2018,Winter 2017,Winter,42,3.232
+control,2/13/2018,Winter 2017,Winter,45,3.192
+control,2/13/2018,Winter 2017,Winter,48,3.142
+control,2/13/2018,Winter 2017,Winter,51,3.052
+control,2/13/2018,Winter 2017,Winter,54,2.992
+control,2/13/2018,Winter 2017,Winter,57,2.912
+control,2/13/2018,Winter 2017,Winter,60,2.612
+control,2/13/2018,Winter 2017,Winter,63,2.052
+control,2/13/2018,Winter 2017,Winter,66,1.492
+control,8/15/2018,Summer 2018,Summer,0,3.675
+control,8/15/2018,Summer 2018,Summer,3,3.625
+control,8/15/2018,Summer 2018,Summer,6,3.585
+control,8/15/2018,Summer 2018,Summer,9,3.545
+control,8/15/2018,Summer 2018,Summer,12,3.525
+control,8/15/2018,Summer 2018,Summer,15,3.535
+control,8/15/2018,Summer 2018,Summer,18,3.555
+control,8/15/2018,Summer 2018,Summer,21,3.545
+control,8/15/2018,Summer 2018,Summer,24,3.575
+control,8/15/2018,Summer 2018,Summer,27,3.555
+control,8/15/2018,Summer 2018,Summer,30,3.565
+control,8/15/2018,Summer 2018,Summer,33,3.595
+control,8/15/2018,Summer 2018,Summer,36,3.595
+control,8/15/2018,Summer 2018,Summer,39,3.615
+control,8/15/2018,Summer 2018,Summer,42,3.565
+control,8/15/2018,Summer 2018,Summer,45,3.515
+control,8/15/2018,Summer 2018,Summer,48,3.445
+control,8/15/2018,Summer 2018,Summer,51,3.375
+control,8/15/2018,Summer 2018,Summer,54,3.245
+control,8/15/2018,Summer 2018,Summer,57,3.015
+control,8/15/2018,Summer 2018,Summer,60,2.455
+control,8/15/2018,Summer 2018,Summer,63,2.015
+control,8/15/2018,Summer 2018,Summer,66,1.545
+control,8/15/2018,Summer 2018,Summer,69,1.225
+control,12/14/2018,Winter 2018,Winter,0,3.87
+control,12/14/2018,Winter 2018,Winter,3,3.84
+control,12/14/2018,Winter 2018,Winter,6,3.79
+control,12/14/2018,Winter 2018,Winter,9,3.75
+control,12/14/2018,Winter 2018,Winter,12,3.74
+control,12/14/2018,Winter 2018,Winter,15,3.74
+control,12/14/2018,Winter 2018,Winter,18,3.7
+control,12/14/2018,Winter 2018,Winter,21,3.69
+control,12/14/2018,Winter 2018,Winter,24,3.69
+control,12/14/2018,Winter 2018,Winter,27,3.66
+control,12/14/2018,Winter 2018,Winter,30,3.65
+control,12/14/2018,Winter 2018,Winter,33,3.66
+control,12/14/2018,Winter 2018,Winter,36,3.67
+control,12/14/2018,Winter 2018,Winter,39,3.68
+control,12/14/2018,Winter 2018,Winter,42,3.67
+control,12/14/2018,Winter 2018,Winter,45,3.63
+control,12/14/2018,Winter 2018,Winter,48,3.58
+control,12/14/2018,Winter 2018,Winter,51,3.55
+control,12/14/2018,Winter 2018,Winter,54,3.45
+control,12/14/2018,Winter 2018,Winter,57,3.31
+control,12/14/2018,Winter 2018,Winter,60,2.98
+control,12/14/2018,Winter 2018,Winter,63,2.37
+control,12/14/2018,Winter 2018,Winter,66,1.85
+control,12/14/2018,Winter 2018,Winter,69,1.44
+control,8/1/2019,Summer 2019,Summer,0,3.805
+control,8/1/2019,Summer 2019,Summer,3,3.815
+control,8/1/2019,Summer 2019,Summer,6,3.785
+control,8/1/2019,Summer 2019,Summer,9,3.775
+control,8/1/2019,Summer 2019,Summer,12,3.725
+control,8/1/2019,Summer 2019,Summer,15,3.725
+control,8/1/2019,Summer 2019,Summer,18,3.725
+control,8/1/2019,Summer 2019,Summer,21,3.745
+control,8/1/2019,Summer 2019,Summer,24,3.725
+control,8/1/2019,Summer 2019,Summer,27,3.755
+control,8/1/2019,Summer 2019,Summer,30,3.745
+control,8/1/2019,Summer 2019,Summer,33,3.745
+control,8/1/2019,Summer 2019,Summer,36,3.755
+control,8/1/2019,Summer 2019,Summer,39,3.795
+control,8/1/2019,Summer 2019,Summer,42,3.765
+control,8/1/2019,Summer 2019,Summer,45,3.765
+control,8/1/2019,Summer 2019,Summer,48,3.675
+control,8/1/2019,Summer 2019,Summer,51,3.545
+control,8/1/2019,Summer 2019,Summer,54,3.425
+control,8/1/2019,Summer 2019,Summer,57,3.275
+control,8/1/2019,Summer 2019,Summer,60,3.095
+control,8/1/2019,Summer 2019,Summer,63,2.645
+control,8/1/2019,Summer 2019,Summer,67,2.135
+control,8/1/2019,Summer 2019,Summer,72,1.775
+control,8/1/2019,Summer 2019,Summer,78,1.525
+control,11/6/2019,Winter 2019,Winter,0,4.105
+control,11/6/2019,Winter 2019,Winter,3,4.045
+control,11/6/2019,Winter 2019,Winter,6,4.075
+control,11/6/2019,Winter 2019,Winter,9,4.045
+control,11/6/2019,Winter 2019,Winter,12,4.035
+control,11/6/2019,Winter 2019,Winter,15,4.045
+control,11/6/2019,Winter 2019,Winter,18,4.065
+control,11/6/2019,Winter 2019,Winter,21,4.065
+control,11/6/2019,Winter 2019,Winter,24,4.075
+control,11/6/2019,Winter 2019,Winter,27,4.085
+control,11/6/2019,Winter 2019,Winter,30,4.085
+control,11/6/2019,Winter 2019,Winter,33,4.085
+control,11/6/2019,Winter 2019,Winter,36,4.085
+control,11/6/2019,Winter 2019,Winter,39,4.065
+control,11/6/2019,Winter 2019,Winter,42,4.045
+control,11/6/2019,Winter 2019,Winter,45,3.995
+control,11/6/2019,Winter 2019,Winter,48,3.895
+control,11/6/2019,Winter 2019,Winter,51,3.755
+control,11/6/2019,Winter 2019,Winter,54,3.645
+control,11/6/2019,Winter 2019,Winter,57,3.525
+control,11/6/2019,Winter 2019,Winter,60,3.425
+control,11/6/2019,Winter 2019,Winter,63,3.155
+control,11/6/2019,Winter 2019,Winter,66,2.745
+control,11/6/2019,Winter 2019,Winter,69,2.305
+control,11/6/2019,Winter 2019,Winter,72,1.995
+control,11/6/2019,Winter 2019,Winter,75,1.665
+control,11/6/2019,Winter 2019,Winter,78,1.395
+control,8/24/2020,Summer 2020,Summer,0,4.026
+control,8/24/2020,Summer 2020,Summer,3,3.996
+control,8/24/2020,Summer 2020,Summer,6,3.956
+control,8/24/2020,Summer 2020,Summer,9,3.956
+control,8/24/2020,Summer 2020,Summer,12,3.946
+control,8/24/2020,Summer 2020,Summer,15,3.926
+control,8/24/2020,Summer 2020,Summer,18,3.896
+control,8/24/2020,Summer 2020,Summer,21,3.876
+control,8/24/2020,Summer 2020,Summer,24,3.846
+control,8/24/2020,Summer 2020,Summer,27,3.866
+control,8/24/2020,Summer 2020,Summer,30,3.876
+control,8/24/2020,Summer 2020,Summer,33,3.856
+control,8/24/2020,Summer 2020,Summer,36,3.846
+control,8/24/2020,Summer 2020,Summer,39,3.806
+control,8/24/2020,Summer 2020,Summer,42,3.766
+control,8/24/2020,Summer 2020,Summer,45,3.696
+control,8/24/2020,Summer 2020,Summer,48,3.596
+control,8/24/2020,Summer 2020,Summer,51,3.456
+control,8/24/2020,Summer 2020,Summer,54,3.306
+control,8/24/2020,Summer 2020,Summer,57,3.116
+control,8/24/2020,Summer 2020,Summer,60,2.976
+control,8/24/2020,Summer 2020,Summer,63,2.786
+control,8/24/2020,Summer 2020,Summer,66,2.296
+control,8/24/2020,Summer 2020,Summer,69,1.946
+control,8/24/2020,Summer 2020,Summer,72,1.686
+control,8/24/2020,Summer 2020,Summer,75,1.456
+control,10/30/2020,Winter 2020,Winter,0,4.004
+control,10/30/2020,Winter 2020,Winter,3,3.964
+control,10/30/2020,Winter 2020,Winter,6,3.954
+control,10/30/2020,Winter 2020,Winter,9,3.944
+control,10/30/2020,Winter 2020,Winter,12,3.914
+control,10/30/2020,Winter 2020,Winter,15,3.894
+control,10/30/2020,Winter 2020,Winter,18,3.864
+control,10/30/2020,Winter 2020,Winter,21,3.834
+control,10/30/2020,Winter 2020,Winter,24,3.844
+control,10/30/2020,Winter 2020,Winter,27,3.834
+control,10/30/2020,Winter 2020,Winter,30,3.834
+control,10/30/2020,Winter 2020,Winter,33,3.824
+control,10/30/2020,Winter 2020,Winter,36,3.814
+control,10/30/2020,Winter 2020,Winter,39,3.784
+control,10/30/2020,Winter 2020,Winter,42,3.734
+control,10/30/2020,Winter 2020,Winter,45,3.644
+control,10/30/2020,Winter 2020,Winter,48,3.534
+control,10/30/2020,Winter 2020,Winter,51,3.384
+control,10/30/2020,Winter 2020,Winter,54,3.234
+control,10/30/2020,Winter 2020,Winter,57,3.084
+control,10/30/2020,Winter 2020,Winter,60,2.924
+control,10/30/2020,Winter 2020,Winter,63,2.534
+control,10/30/2020,Winter 2020,Winter,66,2.204
+control,10/30/2020,Winter 2020,Winter,69,1.864
+control,8/13/2021,Summer 2021,Summer,0,3.986
+control,8/13/2021,Summer 2021,Summer,3,3.936
+control,8/13/2021,Summer 2021,Summer,6,3.966
+control,8/13/2021,Summer 2021,Summer,9,3.936
+control,8/13/2021,Summer 2021,Summer,12,3.946
+control,8/13/2021,Summer 2021,Summer,15,3.946
+control,8/13/2021,Summer 2021,Summer,18,3.966
+control,8/13/2021,Summer 2021,Summer,21,3.946
+control,8/13/2021,Summer 2021,Summer,24,3.956
+control,8/13/2021,Summer 2021,Summer,27,3.936
+control,8/13/2021,Summer 2021,Summer,30,4.006
+control,8/13/2021,Summer 2021,Summer,33,3.986
+control,8/13/2021,Summer 2021,Summer,36,4.016
+control,8/13/2021,Summer 2021,Summer,39,3.976
+control,8/13/2021,Summer 2021,Summer,42,3.956
+control,8/13/2021,Summer 2021,Summer,45,3.896
+control,8/13/2021,Summer 2021,Summer,48,3.826
+control,8/13/2021,Summer 2021,Summer,51,3.706
+control,8/13/2021,Summer 2021,Summer,54,3.556
+control,8/13/2021,Summer 2021,Summer,57,3.296
+control,8/13/2021,Summer 2021,Summer,60,3.126
+control,8/13/2021,Summer 2021,Summer,63,2.906
+control,8/13/2021,Summer 2021,Summer,66,2.606
+control,8/13/2021,Summer 2021,Summer,69,2.226
+control,8/13/2021,Summer 2021,Summer,72,1.936
+control,8/13/2021,Summer 2021,Summer,75,1.636
+control,8/13/2021,Summer 2021,Summer,78,1.336
+control,8/13/2021,Summer 2021,Summer,81,1.096
