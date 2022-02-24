@@ -1,5 +1,6 @@
 # This interactive web application highlights a living shoreline project implemented by The Bay Foundation and known as the Santa Monica Beach Restoration Pilot Project. TBF has collected five years of post restoration data displayed in the app.
 # Author: Karina Johnston, kjohnston@santamonicabay.org
+# Date: February 2022
 
 
 # Attach packages
@@ -46,8 +47,14 @@ ui <- fluidPage(
                  h6("- Led by: The Bay Foundation"),
                  h6("- Partners: City of Santa Monica, California State Parks, Audubon Society"),
                  h6("- Funded by: US Environmental Protection Agency and Annenberg Foundation"),
+                 
+                 br(),
+                 img(src = "TBF_logo.png", 
+                     height = 100, width = 100)
+                 
 #                 h6("- Five years after implementation"),
                  
+
                ), # end sidebarPanel
                
                mainPanel(
@@ -132,7 +139,7 @@ ui <- fluidPage(
     tabPanel("Topography Profiles",
              sidebarLayout(
                sidebarPanel(
-                 checkboxGroupInput("checkGroup", label = h3("Checkbox group"), 
+                 checkboxGroupInput("checkGroup", label = h3("Select Survey Dates"), 
                                     choices = list("Dec 2016" = 1, 
                                                    "Jun 2017" = 2, 
                                                    "Nov 2017" = 3,
@@ -141,12 +148,14 @@ ui <- fluidPage(
                                                    "Jun 2019" = 6,
                                                    "Nov 2019" = 7,
                                                    "Jun 2020" = 8),
-                                    selected = 1),
+                                    selected = 1:8),
+                 
+                 h5("This checkbox selects elevation profile data starting from the back of the beach (lefthand side of the graph) to the ocean (righthand side). Data begin at the baseline in 2016 and show an increase in elevation over time, as well as the formation of small dunes."),
                  
                ), # end sidebarPanel
                
                mainPanel(
-                 
+                 plotOutput("elevProfile", height = "300px", width = "750px")
                ) # end mainPanel
                
              ) # end sidebarLayout
@@ -163,20 +172,19 @@ ui <- fluidPage(
                  selectInput(
                    "hierarchy", "Tree hierarchy",
                    choices = c(
-                     "Category", "Scientific Name",
-                     "Common Name"),
-                   selected = c("Category","Family"),
+                     "Category", "Scientific Name", "Family", "Common Name"),
+                   selected = c("Category", "Scientific Name"),
                    multiple = TRUE
                  ), # end selectInput
                  
        
-                 h6("This collapsible tree shows bird species identified on site between 2016-2021."),
+                 h5("This collapsible tree shows bird species identified on site between 2016-2021. It is not a comprehensive list of bird species presence; rather, it is intended to be representative of species identified on surveys."),
                ), # end sidebarPanel
                
                
                # Show a tree diagram with the selected root node
                mainPanel(
-                 collapsibleTreeOutput("plot", height = "500px")
+                 collapsibleTreeOutput("tree", height = "500px")
                ) # end mainPanel
                  
              ) # end sidebarLayout
@@ -194,11 +202,14 @@ ui <- fluidPage(
                  ), # end h4
                  
                  br(),
-                 br(),
                  h4("For more information, project reports, and documents, please visit:"), # end h4
                  a(href="www.santamonicabay.org", "www.santamonicabay.org"),
                  br(),
-                 h6("Photo credit: The Bay Foundation")
+                 h6("Photo credit: The Bay Foundation"),
+                 br(),
+                 img(src = "TBF_logo.png", 
+                     height = 100, width = 100)
+                 
                ), # end sidebarPanel
                
                mainPanel(
@@ -208,11 +219,13 @@ ui <- fluidPage(
                  img(src = "samo_2016_before.jpg", 
                      height = 283, width = 515),
                  br(),
+                 br(),
                  
                  # Photograph 2
                  h6("The project site approximately one week after the sand fence and native seeds were installed."),
                  img(src = "samo_1wk_after.jpg", 
                      height = 283, width = 515),
+                 br(),
                  br(),
                  
                  # Photograph 3
@@ -220,29 +233,34 @@ ui <- fluidPage(
                  
                  img(src = "samo_1-28-22_north.jpg", 
                      height = 283, width = 515),
+                 br(),
+                 br(),
                  
                  # Photograph 4
                  h6("The project site five years after implementation (January 2022) taken from the middle of the site facing the public access pathway and ocean (west)."),
                  
                  img(src = "samo_1-28-22_sign.jpg", 
                      height = 283, width = 515),
+                 br(),
+                 br(),
                  
                  # Photograph 5
                  h6("The project site five years after implementation (January 2022) taken from the southern half of the site facing west and towards the lifeguard tower."),
                  
                  img(src = "samo_1-28-22_west.jpg", 
-                     height = 283, width = 515)
+                     height = 283, width = 515),
+                 br()
                  
                ) # end mainPanel
                
              ) # end sidebarLayout
              
     ) # end tabPanel page 6
-    
-    
+   
   ) # end navbarPage
   
 ) # end fluidPage
+
 
 
 #######################
@@ -251,8 +269,19 @@ ui <- fluidPage(
 
 # This section includes the server logic for the output commands
 server <- function(input, output) {
+  
+  # Elevation Profile output
+  output$elevProfile <- renderPlot({
+    
+    ggplot(data = elevation_rest, aes(x = distance_m, y = elevation_m, group = date)) +
+      geom_line(aes(color = date), size = 1.2) +
+      labs(x = "Distance (m)", y = "Elevation (m)") +
+      theme_classic()
+  })
 
-  output$plot <- renderCollapsibleTree({
+  
+  # Bird Collapsible Tree output
+  output$tree <- renderCollapsibleTree({
     collapsibleTreeSummary(
       birds,
       hierarchy = input$hierarchy,
@@ -268,6 +297,7 @@ server <- function(input, output) {
   output$value <- renderPrint({ input$select })
   
 } # end server function
+
 
 
 #### Run the application ####
