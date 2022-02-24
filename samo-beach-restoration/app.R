@@ -8,11 +8,16 @@ library(tidyverse)
 library(here)
 library(shinythemes)
 library(collapsibleTree)
+library(colorspace)
 
 # Read in the data
 birds <- read_csv(here("samo-beach-restoration", "data", "birds.csv"))
+elevation_rest <- read_csv(here("samo-beach-restoration", "data", "elevation.csv")) %>% 
+  filter(type == "restoration")
+# elevation_ctrl <- read_csv(here("samo-beach-restoration", "data", "elevation.csv")) %>%
+#   filter(type == "control")
+
 # plant_cover <- read_csv(here("data", "samo_vegetation_master.csv"))
-# elev_profile <- read_csv(here("data", "elev_profile_master.csv"))
 
 
 ##############################
@@ -55,7 +60,8 @@ ui <- fluidPage(
                     a(href="www.santamonicabay.org", "www.santamonicabay.org"),
                  br(),
                     a(href="kjohnston@santamonicabay.org", "kjohnston@santamonicabay.org"),
-                 
+                 br(),
+                 br(),
                  img(src = "pathview_verbena.jpg", 
                      height = 283, width = 515)
                  
@@ -157,14 +163,14 @@ ui <- fluidPage(
                  selectInput(
                    "hierarchy", "Tree hierarchy",
                    choices = c(
-                     "Category", "Family", "Scientific Name",
+                     "Category", "Scientific Name",
                      "Common Name"),
-                   selected = c("Category","Family", "Scientific Name"),
+                   selected = c("Category","Family"),
                    multiple = TRUE
                  ), # end selectInput
                  
        
-                 h6("INSERT TEXT HERE FOR BIRDS"),
+                 h6("This collapsible tree shows bird species identified on site between 2016-2021."),
                ), # end sidebarPanel
                
                
@@ -183,10 +189,49 @@ ui <- fluidPage(
     tabPanel("Photographs",
              sidebarLayout(
                sidebarPanel(
+                 h4("This page shows a series of project photographs beginning before implementation (first photo), then a week after the sand fence and seeds went in (second photo), and the rest were taken in January 2022, just over five years after implementation, with small dunes throughout the site."
+                    
+                 ), # end h4
                  
+                 br(),
+                 br(),
+                 h4("For more information, project reports, and documents, please visit:"), # end h4
+                 a(href="www.santamonicabay.org", "www.santamonicabay.org"),
+                 br(),
+                 h6("Photo credit: The Bay Foundation")
                ), # end sidebarPanel
                
                mainPanel(
+                 
+                 # Photograph 1
+                 h6("Santa Monica Beach when it was groomed, or mechanically raked, before project implementation in August 2015 (facing northwest)."),
+                 img(src = "samo_2016_before.jpg", 
+                     height = 283, width = 515),
+                 br(),
+                 
+                 # Photograph 2
+                 h6("The project site approximately one week after the sand fence and native seeds were installed."),
+                 img(src = "samo_1wk_after.jpg", 
+                     height = 283, width = 515),
+                 br(),
+                 
+                 # Photograph 3
+                 h6("The project site five years after implementation (January 2022) taken from approximately the same location as the *before* photograph (facing northwest)."),
+                 
+                 img(src = "samo_1-28-22_north.jpg", 
+                     height = 283, width = 515),
+                 
+                 # Photograph 4
+                 h6("The project site five years after implementation (January 2022) taken from the middle of the site facing the public access pathway and ocean (west)."),
+                 
+                 img(src = "samo_1-28-22_sign.jpg", 
+                     height = 283, width = 515),
+                 
+                 # Photograph 5
+                 h6("The project site five years after implementation (January 2022) taken from the southern half of the site facing west and towards the lifeguard tower."),
+                 
+                 img(src = "samo_1-28-22_west.jpg", 
+                     height = 283, width = 515)
                  
                ) # end mainPanel
                
@@ -211,7 +256,10 @@ server <- function(input, output) {
     collapsibleTreeSummary(
       birds,
       hierarchy = input$hierarchy,
-      inputId = "node"
+      inputId = "node",
+#      fill = qualitative_hcl(4, palette = "Dark 3"),
+#      fillByLevel = TRUE
+      
 #      root = input$fill
 #      attribute = input$fill
     )
