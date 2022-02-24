@@ -19,6 +19,12 @@ birds <- read_csv(here("samo-beach-restoration", "data", "birds.csv"))
 elevation_rest <- read_csv(here("samo-beach-restoration", "data", "elevation.csv")) %>% 
   filter(type == "restoration")
 
+# Create winter/summer elevation dataframes
+elevation_winter <- elevation_rest %>% 
+  filter(season == "Winter")
+elevation_summer <- elevation_rest %>% 
+  filter(season == "Summer")
+
 # elevation_ctrl <- read_csv(here("samo-beach-restoration", "data", "elevation.csv")) %>%
 #   filter(type == "control")
 
@@ -90,25 +96,36 @@ tabPanel("Topography Profiles",
          sidebarLayout(
            sidebarPanel(
              pickerInput(inputId = "season_year", 
-                         label = h3("Select Survey(s)"), 
-                                choices = list("Winter 2016" = 1, 
-                                               "Summer 2017" = 2, 
-                                               "Winter 2017" = 3,
-                                               "Summer 2018" = 4,
-                                               "Winter 2018" = 5,
-                                               "Summer 2019" = 6,
-                                               "Winter 2019" = 7,
-                                               "Summer 2020" = 8,
-                                               "Winter 2020" = 9,
-                                               "Summer 2021" = 10),
-                         multiple = TRUE), # end pickerInput
+                         label = h4("Select Winter Survey(s)"), 
+                                choices = list("Baseline" = 1, 
+                                               "Winter 2017" = 2,
+                                               "Winter 2018" = 3,
+                                               "Winter 2019" = 4,
+                                               "Winter 2020" = 5),
+                         options = list(`actions-box` = TRUE),
+                         multiple = TRUE), # end pickerInput 1
+
+                          
+             pickerInput(inputId = "season_year", 
+                         label = h4("Select Summer Survey(s)"), 
+                         choices = list("Baseline" = 1, 
+                                        "Summer 2017" = 2,
+                                        "Summer 2018" = 3,
+                                        "Summer 2019" = 4,
+                                        "Summer 2020" = 5,
+                                        "Summer 2021" = 6),
+                         options = list(`actions-box` = TRUE),
+                         multiple = TRUE), # end pickerInput 2
              
-             h5("This checkbox selects elevation profile data starting from the back of the beach (lefthand side of the graph) to the ocean (righthand side). Data begin at the baseline in 2016 and show an increase in elevation over time, as well as the formation of small dunes."),
+           
+             h5("These checkboxes select elevation profile data for either winter or summer months within the restoration area. The graphs start from the back of the beach (lefthand side of the graph) to the ocean (righthand side). Data begin at the baseline in winter of 2016 and show an increase in elevation over time, as well as the formation of small dunes.")
              
            ), # end sidebarPanel
            
            mainPanel(
-             plotOutput("elevProfile", height = "250px", width = "700px")
+             plotOutput("elevProfile_winter", height = "250px", width = "700px"),
+             plotOutput("elevProfile_summer", height = "250px", width = "700px")
+             
            ) # end mainPanel
            
          ) # end sidebarLayout
@@ -211,7 +228,7 @@ tabPanel("Birds",
                     
                  ), # end h4
                  
-                 br(),
+                 
                  h5("For more information, project reports, and documents, please visit:"), # end h4
                  a(href="www.santamonicabay.org", "www.santamonicabay.org"),
                  br(),
@@ -239,7 +256,7 @@ tabPanel("Birds",
                  br(),
                  
                  # Photograph 3
-                 h6("The project site five years after implementation (January 2022) taken from approximately the same location as the *before* photograph (facing northwest)."),
+                 h6("The project site five years after implementation (January 2022) taken from approximately the same location as the 'before' photograph (facing northwest)."),
                  
                  img(src = "samo_1-28-22_north.jpg", 
                      height = 283, width = 515),
@@ -303,19 +320,46 @@ tabPanel("Birds",
 # This section includes the server logic for the output commands
 server <- function(input, output) {
   
-  # Elevation Profile output
-  output$elevProfile <- renderPlot({
+  # Elevation Profile output - winter plot
+  output$elevProfile_winter <- renderPlot({
     
     season_year <- input$season_year
+    distance_m <- input$distance_m
+    elevation_m <- input$elevation_m
     elevation_rest[elevation_rest$season_year %in% input$season_year,]
     
-    ggplot(data = elevation_rest, aes(x = distance_m, y = elevation_m, group = season_year)) +
+    ggplot(data = elevation_winter, aes(x = distance_m, y = elevation_m, 
+                                        group = season_year)) +
       geom_line(aes(color = season_year), size = 1.2) +
-      labs(x = "Distance (m)", y = "Elevation (m)") +
+      labs(x = "Distance (m)", y = "Elevation (m)", 
+           title = "Winter Elevation Profiles") +
       scale_color_discrete(type = "viridis") +
-      theme_classic()
+      theme_classic() +
+      theme(plot.title = element_text(hjust = 0.5))
+    
   })
 
+  
+  # Elevation Profile output - summer plot
+  output$elevProfile_summer <- renderPlot({
+    
+    season_year <- input$season_year
+    distance_m <- input$distance_m
+    elevation_m <- input$elevation_m
+    elevation_rest[elevation_rest$season_year %in% input$season_year,]
+    
+    ggplot(data = elevation_summer, aes(x = distance_m, y = elevation_m, 
+                                        group = season_year)) +
+      geom_line(aes(color = season_year), size = 1.2) +
+      labs(x = "Distance (m)", y = "Elevation (m)",
+           title = "Summer Elevation Profiles") +
+      scale_color_discrete(type = "viridis") +
+      theme_classic() +
+      theme(plot.title = element_text(hjust = 0.5))
+  })
+  
+  
+  
   
   # Bird Collapsible Tree output
   output$tree <- renderCollapsibleTree({

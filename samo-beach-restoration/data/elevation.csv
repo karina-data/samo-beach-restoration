@@ -1,22 +1,40 @@
 type,date,season_year,season,distance_m,elevation_m
-restoration,12/16/2016,Winter 2016,Winter,0,3.28
-restoration,12/16/2016,Winter 2016,Winter,5,3.18
-restoration,12/16/2016,Winter 2016,Winter,10,3.18
-restoration,12/16/2016,Winter 2016,Winter,15,3.16
-restoration,12/16/2016,Winter 2016,Winter,20,3.16
-restoration,12/16/2016,Winter 2016,Winter,25,3.16
-restoration,12/16/2016,Winter 2016,Winter,30,3.19
-restoration,12/16/2016,Winter 2016,Winter,35,3.2
-restoration,12/16/2016,Winter 2016,Winter,40,3.22
-restoration,12/16/2016,Winter 2016,Winter,45,3.2
-restoration,12/16/2016,Winter 2016,Winter,50,3.24
-restoration,12/16/2016,Winter 2016,Winter,55,3.12
-restoration,12/16/2016,Winter 2016,Winter,55.7,3.05
-restoration,12/16/2016,Winter 2016,Winter,60.7,2.41
-restoration,12/16/2016,Winter 2016,Winter,65.7,1.57
-restoration,12/16/2016,Winter 2016,Winter,70.7,1.03
-restoration,12/16/2016,Winter 2016,Winter,75.7,0.65
-restoration,12/16/2016,Winter 2016,Winter,80.7,0.41
+restoration,12/16/2016,Baseline,Winter,0,3.28
+restoration,12/16/2016,Baseline,Winter,5,3.18
+restoration,12/16/2016,Baseline,Winter,10,3.18
+restoration,12/16/2016,Baseline,Winter,15,3.16
+restoration,12/16/2016,Baseline,Winter,20,3.16
+restoration,12/16/2016,Baseline,Winter,25,3.16
+restoration,12/16/2016,Baseline,Winter,30,3.19
+restoration,12/16/2016,Baseline,Winter,35,3.2
+restoration,12/16/2016,Baseline,Winter,40,3.22
+restoration,12/16/2016,Baseline,Winter,45,3.2
+restoration,12/16/2016,Baseline,Winter,50,3.24
+restoration,12/16/2016,Baseline,Winter,55,3.12
+restoration,12/16/2016,Baseline,Winter,55.7,3.05
+restoration,12/16/2016,Baseline,Winter,60.7,2.41
+restoration,12/16/2016,Baseline,Winter,65.7,1.57
+restoration,12/16/2016,Baseline,Winter,70.7,1.03
+restoration,12/16/2016,Baseline,Winter,75.7,0.65
+restoration,12/16/2016,Baseline,Winter,80.7,0.41
+restoration,12/16/2016,Baseline,Summer,0,3.28
+restoration,12/16/2016,Baseline,Summer,5,3.18
+restoration,12/16/2016,Baseline,Summer,10,3.18
+restoration,12/16/2016,Baseline,Summer,15,3.16
+restoration,12/16/2016,Baseline,Summer,20,3.16
+restoration,12/16/2016,Baseline,Summer,25,3.16
+restoration,12/16/2016,Baseline,Summer,30,3.19
+restoration,12/16/2016,Baseline,Summer,35,3.2
+restoration,12/16/2016,Baseline,Summer,40,3.22
+restoration,12/16/2016,Baseline,Summer,45,3.2
+restoration,12/16/2016,Baseline,Summer,50,3.24
+restoration,12/16/2016,Baseline,Summer,55,3.12
+restoration,12/16/2016,Baseline,Summer,55.7,3.05
+restoration,12/16/2016,Baseline,Summer,60.7,2.41
+restoration,12/16/2016,Baseline,Summer,65.7,1.57
+restoration,12/16/2016,Baseline,Summer,70.7,1.03
+restoration,12/16/2016,Baseline,Summer,75.7,0.65
+restoration,12/16/2016,Baseline,Summer,80.7,0.41
 restoration,9/13/2017,Summer 2017,Summer,0,3.394
 restoration,9/13/2017,Summer 2017,Summer,3,3.374
 restoration,9/13/2017,Summer 2017,Summer,6,3.354
