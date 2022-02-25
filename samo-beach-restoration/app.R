@@ -1,5 +1,9 @@
+######################################################
+#### Santa Monica Beach Restoration Pilot Project ####
+######################################################
+
 # This interactive web application highlights a living shoreline project implemented by The Bay Foundation and known as the Santa Monica Beach Restoration Pilot Project. TBF has collected five years of post restoration data displayed in the app.
-# Author: Karina Johnston, kjohnston@santamonicabay.org
+# Author: Karina Johnston, kjohnston@santamonicabay.org, www.santamonicabay.org
 # Date: February 2022
 
 
@@ -25,10 +29,12 @@ elevation_winter <- elevation_rest %>%
 elevation_summer <- elevation_rest %>% 
   filter(season == "Summer")
 
+# plant cover by sps over all years
+plants <- read_csv(here("samo-beach-restoration", "data", "sps_total_distance.csv")) %>% 
+  janitor::clean_names() 
+
 # elevation_ctrl <- read_csv(here("samo-beach-restoration", "data", "elevation.csv")) %>%
 #   filter(type == "control")
-
-# plant_cover <- read_csv(here("data", "samo_vegetation_master.csv"))
 
 
 ##############################
@@ -163,32 +169,32 @@ tabPanel("Bird Species",
 
     #### PAGE 4 ####
     
-    tabPanel("Plant Species Maps",
-      
-    # Sidebar with a slider input for number of bins 
-    sidebarLayout(
-        sidebarPanel(
-          selectInput("select", label = h4("Select box"), 
-                      choices = list("Species 1" = 1, 
-                                     "Species 2" = 2, 
-                                     "Species 3" = 3,
-                                     "Species 4" = 4,
-                                     "Species 5" = 5,
-                                     "All plant species" = 6), 
-                      selected = 1), # end selectInput
-          
-        ), # end sidebarPanel
-
-        # Show a plot of the generated distribution
-        mainPanel(
-          # plotOutput("plantmap")
-           
-        ) # end mainPanel
-        
-    ) # end sidebarLayout
-
-    ), # end tabPanel page 4
-
+    # tabPanel("Plant Species Maps",
+    #   
+    # # Sidebar with a slider input for number of bins 
+    # sidebarLayout(
+    #     sidebarPanel(
+    #       selectInput("select", label = h4("Select box"), 
+    #                   choices = list("Species 1" = 1, 
+    #                                  "Species 2" = 2, 
+    #                                  "Species 3" = 3,
+    #                                  "Species 4" = 4,
+    #                                  "Species 5" = 5,
+    #                                  "All plant species" = 6), 
+    #                   selected = 1), # end selectInput
+    #       
+    #     ), # end sidebarPanel
+    # 
+    #     # Show a plot of the generated distribution
+    #     mainPanel(
+    #       # plotOutput("plantmap")
+    #        
+    #     ) # end mainPanel
+    #     
+    # ) # end sidebarLayout
+    # 
+    # ), # end tabPanel page 4
+    # 
 
     #### PAGE 5 ####
     
@@ -200,9 +206,9 @@ tabPanel("Bird Species",
                    
                    # Slider bar 
                    sliderInput("slider1", label = h3("Select Year Range"), 
-                               min = 0, 
-                               max = 100, 
-                               value = 50)
+                               min = 2017, 
+                               max = 2021, 
+                               value = 1)
             )
             
           ), # end fluidRow
@@ -210,6 +216,8 @@ tabPanel("Bird Species",
         ), # end sidebarPanel
         
         mainPanel(
+          plotOutput("plant_cover")
+          
           
         ) # end mainPanel
         
@@ -389,6 +397,22 @@ server <- function(input, output) {
 #      attribute = input$fill
     )
   })
+  
+  
+  # Plant cover output
+  output$plant_cover <- renderPlot({
+    
+    ggplot(data = plants, aes(x = date, y = veg_cover_percent), group = species) +
+      geom_col(aes(fill = species)) +
+      scale_fill_discrete(type = "viridis") +
+      labs(x = "Survey Year / Month",
+           y = "Vegetation Cover (%)",
+           title = "Vegetation Cover 2016-2021") +
+      theme_classic()
+    
+  })
+  
+  
   
   output$value <- renderPrint({ input$select })
   
