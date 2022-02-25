@@ -121,8 +121,8 @@ tabPanel("Topography Profiles",
            ), # end sidebarPanel
            
            mainPanel(
-             plotOutput("elevProfile_winter", height = "250px", width = "700px"),
-             plotOutput("elevProfile_summer", height = "250px", width = "700px")
+             plotOutput("elevProfile_winter", height = "225px", width = "700px"),
+             plotOutput("elevProfile_summer", height = "225px", width = "700px")
              
            ) # end mainPanel
            
@@ -290,16 +290,32 @@ tabPanel("Birds",
     tabPanel("Citations",
          sidebarLayout(
            sidebarPanel(
-             h5("This page contains citations for the web application development and data.")
+             h5("This page contains citations for the web application development and project data. This web application was created using R Shiny App."),
+             br(),
+             img(src = "TBF_logo.png", 
+                 height = 100, width = 100),
+             img(src = "Rlogo.png", 
+                 height = 100, width = 100)
              
            ), # end sidebarPanel
            
            mainPanel(
              h4("Citations"),
-             h6("citation1"),
-             h6("citation2"),
-             h6("citation3"),
-             h6("citation4.....")
+             h6("Chang, Winston, Joe Cheng, JJ Allaire, Carson Sievert, Barret Schloerke, Yihui Xie, Jeff Allen, Jonathan McPherson, Alan Dipert, and Barbara Borges (2021). shiny: Web Application Framework for R. R package version 1.7.1. https://CRAN.R-project.org/package=shiny"),
+             h6("Chang, Winston (2021). shinythemes: Themes for Shiny. R package version 1.2.0. https://CRAN.R-project.org/package=shinythemes"),
+             h6("Johnston, K., C. Enyart, M. Jenkins, D. Lazarus, and S. Cuadra. 2021. Santa Monica Beach Restoration Pilot Project: Year 5 Annual Report. Report prepared by The Bay Foundation for City of Santa Monica, California Coastal Commission, US Environmental Protection Agency, and California Department of Parks and Recreation. 118 pages."),
+             h6("Johnston, K., C. Enyart, K. Alvarez, and H. Weyland. 2020. Santa Monica Beach Restoration Pilot Project: Year 4 Annual Report. Report prepared by The Bay Foundation for City of Santa Monica, California Coastal Commission, US Environmental Protection Agency, and California Department of Parks and Recreation. 100 pages."),
+             h6("Johnston, K., M. Grubbs, and C. Enyart. 2019. Santa Monica Beach Restoration Pilot Project: Year 3 Annual Report. Report prepared by The Bay Foundation for City of Santa Monica, California Coastal Commission, US Environmental Protection Agency, and California Department of Parks and Recreation. 88 pages."),
+             h6("Johnston, K, et al. Unpublished Data. 2016-2021. Source: The Bay Foundation. Funded by US Environmental Protection Agency, Annenberg Foundation."),
+             h6("Khan, Adeel (2018). collapsibleTree: Interactive Collapsible Tree Diagrams using 'D3.js'. R package version 0.1.7. https://CRAN.R-project.org/package=collapsibleTree"),
+             h6("Perrier, Victor, Fanny Meyer, and David Granjon (2022). shinyWidgets: Custom Inputs Widgets for Shiny. R package version 0.6.4. https://CRAN.R-project.org/package=shinyWidgets"),
+             h6("R Core Team (2021). R: A language and environment for statistical computing. R   Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/."),
+             h6("RStudio Team (2021). RStudio: Integrated Development Environment for R. RStudio, PBC, Boston, MA URL http://www.rstudio.com/."),
+             h6("Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686")
+             
+             
+#             h6("any other citations, put them here")
+
            ) # end mainPanel
            
          ) # end sidebarLayout
@@ -330,7 +346,7 @@ server <- function(input, output) {
     
     ggplot(data = elevation_winter, aes(x = distance_m, y = elevation_m, 
                                         group = season_year)) +
-      geom_line(aes(color = season_year), size = 1.2) +
+      ggalt::geom_xspline(aes(color = season_year), size = 1.2) +
       labs(x = "Distance (m)", y = "Elevation (m)", 
            title = "Winter Elevation Profiles") +
       scale_color_discrete(type = "viridis") +
@@ -350,7 +366,7 @@ server <- function(input, output) {
     
     ggplot(data = elevation_summer, aes(x = distance_m, y = elevation_m, 
                                         group = season_year)) +
-      geom_line(aes(color = season_year), size = 1.2) +
+      ggalt::geom_xspline(aes(color = season_year), size = 1.2) +
       labs(x = "Distance (m)", y = "Elevation (m)",
            title = "Summer Elevation Profiles") +
       scale_color_discrete(type = "viridis") +
@@ -359,8 +375,7 @@ server <- function(input, output) {
   })
   
   
-  
-  
+
   # Bird Collapsible Tree output
   output$tree <- renderCollapsibleTree({
     collapsibleTreeSummary(
