@@ -46,7 +46,7 @@ ui <- fluidPage(
     
     #### PAGE 1 ####
     
-    tabPanel("Information",
+    tabPanel("Introduction",
              sidebarLayout(
                sidebarPanel(
                  h4("This web app visualizes five years of data from the Santa Monica 
@@ -133,7 +133,7 @@ tabPanel("Topography Profiles",
 
 #### PAGE 3 ####
 
-tabPanel("Birds",
+tabPanel("Bird Species",
          sidebarLayout(
            sidebarPanel(
              
