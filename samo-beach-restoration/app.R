@@ -53,17 +53,15 @@ ui <- fluidPage(
                     Beach Restoration Pilot Project"
                    
                  ), # end h4
-                 h6("- Installed in 2016"),
-                 h6("- Led by: The Bay Foundation"),
-                 h6("- Partners: City of Santa Monica, California State Parks, Audubon Society"),
-                 h6("- Funded by: US Environmental Protection Agency and Annenberg Foundation"),
+                 tags$li("Installed in 2016"),
+                 tags$li("Led by: The Bay Foundation"),
+                 tags$li("Partners: City of Santa Monica, California State Parks, Audubon Society"),
+                 tags$li("Funded by: US Environmental Protection Agency and Annenberg Foundation"),
                  
                  br(),
                  img(src = "TBF_logo.png", 
                      height = 100, width = 100)
-                 
-#                 h6("- Five years after implementation"),
-                 
+               
 
                ), # end sidebarPanel
                
@@ -170,7 +168,7 @@ tabPanel("Birds",
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel(
-          selectInput("select", label = h3("Select box"), 
+          selectInput("select", label = h4("Select box"), 
                       choices = list("Species 1" = 1, 
                                      "Species 2" = 2, 
                                      "Species 3" = 3,
@@ -201,8 +199,10 @@ tabPanel("Birds",
             column(12,
                    
                    # Slider bar 
-                   sliderInput("slider1", label = h3("Slider"), min = 0, 
-                               max = 100, value = 50)
+                   sliderInput("slider1", label = h3("Select Year Range"), 
+                               min = 0, 
+                               max = 100, 
+                               value = 50)
             )
             
           ), # end fluidRow
@@ -242,21 +242,21 @@ tabPanel("Birds",
                mainPanel(
                  
                  # Photograph 1
-                 h6("Santa Monica Beach when it was groomed, or mechanically raked, before project implementation in August 2015 (facing northwest)."),
+                 h5("Santa Monica Beach when it was groomed, or mechanically raked, before project implementation in August 2015 (facing northwest)."),
                  img(src = "samo_2016_before.jpg", 
                      height = 283, width = 515),
                  br(),
                  br(),
                  
                  # Photograph 2
-                 h6("The project site approximately one week after the sand fence and native seeds were installed."),
+                 h5("The project site approximately one week after the sand fence and native seeds were installed."),
                  img(src = "samo_1wk_after.jpg", 
                      height = 283, width = 515),
                  br(),
                  br(),
                  
                  # Photograph 3
-                 h6("The project site five years after implementation (January 2022) taken from approximately the same location as the 'before' photograph (facing northwest)."),
+                 h5("The project site five years after implementation (January 2022) taken from approximately the same location as the 'before' photograph (facing northwest)."),
                  
                  img(src = "samo_1-28-22_north.jpg", 
                      height = 283, width = 515),
@@ -264,7 +264,7 @@ tabPanel("Birds",
                  br(),
                  
                  # Photograph 4
-                 h6("The project site five years after implementation (January 2022) taken from the middle of the site facing the public access pathway and ocean (west)."),
+                 h5("The project site five years after implementation (January 2022) taken from the middle of the site facing the public access pathway and ocean (west)."),
                  
                  img(src = "samo_1-28-22_sign.jpg", 
                      height = 283, width = 515),
@@ -272,7 +272,7 @@ tabPanel("Birds",
                  br(),
                  
                  # Photograph 5
-                 h6("The project site five years after implementation (January 2022) taken from the southern half of the site facing west and towards the lifeguard tower."),
+                 h5("The project site five years after implementation (January 2022) taken from the southern half of the site facing west and towards the lifeguard tower. Note the 3-foot sand fence is buried across portions of the picture."),
                  
                  img(src = "samo_1-28-22_west.jpg", 
                      height = 283, width = 515),
