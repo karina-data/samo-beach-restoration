@@ -30,7 +30,7 @@ elevation_winter <- elevation_rest %>%
 elevation_summer <- elevation_rest %>% 
   filter(season == "Summer")
 
-# plant cover by sps over all years
+# Plant cover by sps over all years
 plants <- read_csv(here("samo-beach-restoration", "data", "sps_total_distance.csv")) %>% 
   janitor::clean_names() 
 
@@ -117,21 +117,21 @@ ui <- fluidPage(
                mainPanel(
                  
                  # Photograph 1
-                 h5("Santa Monica Beach when it was groomed, or mechanically raked, before project implementation in August 2015 (facing northwest)."),
+                 h5("Santa Monica Beach when it was groomed, or mechanically raked, before project implementation in August 2015 (facing northwest). Note the mechanized grooming tracks and lack of plants and dunes."),
                  img(src = "samo_2016_before.jpg", 
                      height = 283, width = 515),
                  br(),
                  br(),
                  
                  # Photograph 2
-                 h5("The project site approximately one week after the sand fence and native seeds were installed."),
+                 h5("The project site approximately one week after the sand fence and native seeds were installed (facing southwest from the middle of the site). Note the smoothed sand from the wind and the installation of the fence in a curved pattern."),
                  img(src = "samo_1wk_after.jpg", 
                      height = 283, width = 515),
                  br(),
                  br(),
                  
                  # Photograph 3
-                 h5("The project site five years after implementation (January 2022) taken from approximately the same location as the 'before' photograph (facing northwest)."),
+                 h5("The project site five years after implementation (January 2022) taken from approximately the same location as the 'before' photograph at the top (facing northwest). You can see plants of several species throughout the site with small sand dunes, and the fence is over half buried."),
                  
                  img(src = "samo_1-28-22_north.jpg", 
                      height = 283, width = 515),
@@ -139,7 +139,7 @@ ui <- fluidPage(
                  br(),
                  
                  # Photograph 4
-                 h5("The project site five years after implementation (January 2022) taken from the middle of the site facing the public access pathway and ocean (west)."),
+                 h5("The project site five years after implementation (January 2022) taken from the middle of the site facing the public access pathway and ocean (west). You can see one of the two interpretive signs, the pathway, plants throughout the site, and a line of dunes close to the ocean."),
                  
                  img(src = "samo_1-28-22_sign.jpg", 
                      height = 283, width = 515),
@@ -147,7 +147,7 @@ ui <- fluidPage(
                  br(),
                  
                  # Photograph 5
-                 h5("The project site five years after implementation (January 2022) taken from the southern half of the site facing west and towards the lifeguard tower. Note the 3-foot sand fence is buried across portions of the picture."),
+                 h5("The project site five years after implementation (January 2022) taken from the southern half of the site facing west and towards the lifeguard tower. Note the 3-foot tall sand fence is buried in several areas of the picture (foreground and close to the lifeguard tower)."),
                  
                  img(src = "samo_1-28-22_west.jpg", 
                      height = 283, width = 515),
@@ -238,36 +238,6 @@ tabPanel("Bird Species",
 ), # end tabPanel page 3
 
 
-
-    #### PAGE 4 ####
-    
-    # tabPanel("Plant Species Maps",
-    #   
-    # # Sidebar with a slider input for number of bins 
-    # sidebarLayout(
-    #     sidebarPanel(
-    #       selectInput("select", label = h4("Select box"), 
-    #                   choices = list("Species 1" = 1, 
-    #                                  "Species 2" = 2, 
-    #                                  "Species 3" = 3,
-    #                                  "Species 4" = 4,
-    #                                  "Species 5" = 5,
-    #                                  "All plant species" = 6), 
-    #                   selected = 1), # end selectInput
-    #       
-    #     ), # end sidebarPanel
-    # 
-    #     # Show a plot of the generated distribution
-    #     mainPanel(
-    #       # plotOutput("plantmap")
-    #        
-    #     ) # end mainPanel
-    #     
-    # ) # end sidebarLayout
-    # 
-    # ), # end tabPanel page 4
-    # 
-
     #### PAGE 5 ####
     
     tabPanel("Plant Cover",
@@ -280,12 +250,13 @@ tabPanel("Bird Species",
                    sliderInput("slider1", label = h3("Select Year Range"), 
                                min = 2017, 
                                max = 2021, 
-                               value = 1)
+                               value = 2021)
             )
             
           ), # end fluidRow
           
-          h5("INSERT TEXT HERE FOR THE VEG COVER DATA")
+          h5("This graph shows vegetation cover by species over time, beginning just after restoration in 2017, and continuing through five years of surveys through the most recent in 2021. Seven species are native and one (sea rocket) is not native."),
+          h5("INSERT SENTENCE ON HOW TO DO SLIDER BAR")
           
         ), # end sidebarPanel
         
@@ -299,7 +270,7 @@ tabPanel("Bird Species",
       
     ), # end tabPanel page 5
 
-    
+
 
     #### PAGE 7 ####
 
