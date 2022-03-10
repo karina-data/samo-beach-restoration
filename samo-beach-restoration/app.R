@@ -3,6 +3,7 @@
 ######################################################
 
 # This interactive web application highlights a living shoreline project implemented by The Bay Foundation and known as the Santa Monica Beach Restoration Pilot Project. TBF has collected five years of post restoration data displayed in the app.
+
 # Author: Karina Johnston, kjohnston@santamonicabay.org, www.santamonicabay.org
 # Date: February 2022
 
@@ -33,8 +34,6 @@ elevation_summer <- elevation_rest %>%
 plants <- read_csv(here("samo-beach-restoration", "data", "sps_total_distance.csv")) %>% 
   janitor::clean_names() 
 
-# elevation_ctrl <- read_csv(here("samo-beach-restoration", "data", "elevation.csv")) %>%
-#   filter(type == "control")
 
 
 ##############################
@@ -59,7 +58,7 @@ ui <- fluidPage(
                     Beach Restoration Pilot Project"
                    
                  ), # end h4
-                 tags$li("Installed in 2016"),
+                 tags$li("Installed in December 2016"),
                  tags$li("Led by: The Bay Foundation"),
                  tags$li("Partners: City of Santa Monica, California State Parks, Audubon Society"),
                  tags$li("Funded by: US Environmental Protection Agency and Annenberg Foundation"),
@@ -73,11 +72,11 @@ ui <- fluidPage(
                
                mainPanel(
                  h4("Shiny App created by Karina Johnston, Science Director, The Bay Foundation"),
-                 h5("The Bay Foundation (TBF) restored approximately three acres beach adjacent to the ocean, by seeding four species of native plants adapted to live in this habitat area. Living on the ocean’s edge, this community of plants attracted insects and birds, and adapted to the harsh conditions of beach life, including salt spray, wind, and intense sunlight."),
+                 h5("The Bay Foundation (TBF) restored approximately three acres of beach adjacent to the ocean, by seeding four species of native plants adapted to live in this habitat area. Living on the ocean’s edge, this community of plants grew slowly and attracted insects and birds, while adapting to the harsh conditions of beach life, including salt spray, wind, and intense sunlight."),
                 
-                 h5("As the plants of the coastal strand habitat grow, they capture windblown sand beneath their branches and leaves. Over time, they build sand dunes that prevent waves and extreme tides from flooding the beach and nearby infrastructure. By reestablishing this habitat, TBF and its partners are able to enhance beaches that are naturally resistant to sea level rise, while creating refuge for endangered species and adding natural beauty to our beaches."),
+                 h5("As the plants of the coastal strand habitat grow, they capture windblown sand beneath their leaves. Over time, the plants stabilize the sand and then build small sand dunes that prevent waves and extreme tides from flooding the beach and nearby infrastructure. By reestablishing this habitat, TBF and its partners are able to enhance beaches that are naturally resilient to sea level rise, while creating a refuge for endangered species and adding natural beauty to our beaches."),
                  
-                 h5("This interactive web application displays trends from five-years of project data. The goal is to help visualize and understand biological and physical restoration trajectories. For more information:"),
+                 h5("This interactive web application displays trends from five-years of project data. Click through the tabs at the top to explore the data. The goal is to help visualize and understand biological and physical restoration trajectories at the site. For more information:"),
                     a(href="www.santamonicabay.org", "www.santamonicabay.org"),
                  br(),
                     a(href="kjohnston@santamonicabay.org", "kjohnston@santamonicabay.org"),
@@ -93,7 +92,75 @@ ui <- fluidPage(
       
     ), # end tabPanel page 1
     
+
     
+    #### PAGE 6 ####
+    
+    tabPanel("Photographs",
+             sidebarLayout(
+               sidebarPanel(
+                 h5("This page shows a series of project photographs beginning before implementation (top photo on the right), then a week after the sand fence and seeds went in (second photo), and the rest were taken in January 2022, approximately five years after implementation, with small dunes and native plants visible throughout the site."
+                    
+                 ), # end h4
+                 
+                 
+                 h5("For more information, project reports, photographs, and other supplemental documents, please visit:"), # end h4
+                 a(href="www.santamonicabay.org", "www.santamonicabay.org"),
+                 br(),
+                 h6("Photo credit: The Bay Foundation"),
+                 br(),
+                 img(src = "TBF_logo.png", 
+                     height = 100, width = 100)
+                 
+               ), # end sidebarPanel
+               
+               mainPanel(
+                 
+                 # Photograph 1
+                 h5("Santa Monica Beach when it was groomed, or mechanically raked, before project implementation in August 2015 (facing northwest)."),
+                 img(src = "samo_2016_before.jpg", 
+                     height = 283, width = 515),
+                 br(),
+                 br(),
+                 
+                 # Photograph 2
+                 h5("The project site approximately one week after the sand fence and native seeds were installed."),
+                 img(src = "samo_1wk_after.jpg", 
+                     height = 283, width = 515),
+                 br(),
+                 br(),
+                 
+                 # Photograph 3
+                 h5("The project site five years after implementation (January 2022) taken from approximately the same location as the 'before' photograph (facing northwest)."),
+                 
+                 img(src = "samo_1-28-22_north.jpg", 
+                     height = 283, width = 515),
+                 br(),
+                 br(),
+                 
+                 # Photograph 4
+                 h5("The project site five years after implementation (January 2022) taken from the middle of the site facing the public access pathway and ocean (west)."),
+                 
+                 img(src = "samo_1-28-22_sign.jpg", 
+                     height = 283, width = 515),
+                 br(),
+                 br(),
+                 
+                 # Photograph 5
+                 h5("The project site five years after implementation (January 2022) taken from the southern half of the site facing west and towards the lifeguard tower. Note the 3-foot sand fence is buried across portions of the picture."),
+                 
+                 img(src = "samo_1-28-22_west.jpg", 
+                     height = 283, width = 515),
+                 br()
+                 
+               ) # end mainPanel
+               
+             ) # end sidebarLayout
+             
+    ), # end tabPanel page 6
+    
+    
+        
 #### PAGE 2 ####
 
 tabPanel("Topography Profiles",
@@ -122,7 +189,9 @@ tabPanel("Topography Profiles",
                          multiple = TRUE), # end pickerInput 2
              
            
-             h5("These checkboxes select elevation profile data for either winter or summer months within the restoration area. The graphs start from the back of the beach (lefthand side of the graph) to the ocean (righthand side). Data begin at the baseline in winter of 2016 and show an increase in elevation over time, as well as the formation of small dunes.")
+             h5("These checkboxes select elevation profile data for either winter or summer months within the restoration area. The graphs start from the back of the beach (lefthand side of the graph) to the ocean (righthand side)."),
+            
+             h5("Data begin at the baseline in winter of 2016 (bottom line on the graphs) and show an increase in elevation over time, as well as the formation of small dunes. Click through the top dropdown box to select the winter survey data years, and click through the bottom dropdown box to change the selection of summer data years.")
              
            ), # end sidebarPanel
            
@@ -146,13 +215,16 @@ tabPanel("Bird Species",
              selectInput(
                "hierarchy", "Tree hierarchy",
                choices = c(
-                 "Category", "Scientific Name", "Family", "Common Name"),
+                 "Category", "Scientific Name", "Family"),
                selected = c("Category", "Scientific Name"),
                multiple = TRUE
              ), # end selectInput
              
              
-             h5("This collapsible tree shows bird species identified on site between 2016-2021. It is not a comprehensive list of bird species presence; rather, it is intended to be representative of species identified on surveys."),
+             h5("This collapsible tree shows bird species identified on site between 2016-2021. It is not a comprehensive list of bird species presence; rather, it is intended to be representative of species identified on infrequent surveys."),
+            
+             h5("The starting tree output shows the bird categories or guilds, and if you click on the category, it will unfold into the scientific bird names of that guild found on site. Use the box to change options (e.g., to add a family layer or remove one of the other layers).")
+             
            ), # end sidebarPanel
            
            
@@ -213,6 +285,8 @@ tabPanel("Bird Species",
             
           ), # end fluidRow
           
+          h5("INSERT TEXT HERE FOR THE VEG COVER DATA")
+          
         ), # end sidebarPanel
         
         mainPanel(
@@ -227,78 +301,12 @@ tabPanel("Bird Species",
 
     
 
-    #### PAGE 6 ####
-    
-    tabPanel("Photographs",
-             sidebarLayout(
-               sidebarPanel(
-                 h5("This page shows a series of project photographs beginning before implementation (first photo), then a week after the sand fence and seeds went in (second photo), and the rest were taken in January 2022, just over five years after implementation, with small dunes throughout the site."
-                    
-                 ), # end h4
-                 
-                 
-                 h5("For more information, project reports, and documents, please visit:"), # end h4
-                 a(href="www.santamonicabay.org", "www.santamonicabay.org"),
-                 br(),
-                 h6("Photo credit: The Bay Foundation"),
-                 br(),
-                 img(src = "TBF_logo.png", 
-                     height = 100, width = 100)
-                 
-               ), # end sidebarPanel
-               
-               mainPanel(
-                 
-                 # Photograph 1
-                 h5("Santa Monica Beach when it was groomed, or mechanically raked, before project implementation in August 2015 (facing northwest)."),
-                 img(src = "samo_2016_before.jpg", 
-                     height = 283, width = 515),
-                 br(),
-                 br(),
-                 
-                 # Photograph 2
-                 h5("The project site approximately one week after the sand fence and native seeds were installed."),
-                 img(src = "samo_1wk_after.jpg", 
-                     height = 283, width = 515),
-                 br(),
-                 br(),
-                 
-                 # Photograph 3
-                 h5("The project site five years after implementation (January 2022) taken from approximately the same location as the 'before' photograph (facing northwest)."),
-                 
-                 img(src = "samo_1-28-22_north.jpg", 
-                     height = 283, width = 515),
-                 br(),
-                 br(),
-                 
-                 # Photograph 4
-                 h5("The project site five years after implementation (January 2022) taken from the middle of the site facing the public access pathway and ocean (west)."),
-                 
-                 img(src = "samo_1-28-22_sign.jpg", 
-                     height = 283, width = 515),
-                 br(),
-                 br(),
-                 
-                 # Photograph 5
-                 h5("The project site five years after implementation (January 2022) taken from the southern half of the site facing west and towards the lifeguard tower. Note the 3-foot sand fence is buried across portions of the picture."),
-                 
-                 img(src = "samo_1-28-22_west.jpg", 
-                     height = 283, width = 515),
-                 br()
-                 
-               ) # end mainPanel
-               
-             ) # end sidebarLayout
-             
-    ), # end tabPanel page 6
-
-   
     #### PAGE 7 ####
 
     tabPanel("Citations",
          sidebarLayout(
            sidebarPanel(
-             h5("This page contains citations for the web application development and project data. This web application was created using R Shiny App."),
+             h5("This page contains citations for the web application development and project data. This web application was created using R Shiny App by Karina Johnston."),
              br(),
              img(src = "TBF_logo.png", 
                  height = 100, width = 100),
@@ -311,6 +319,7 @@ tabPanel("Bird Species",
              h4("Citations"),
              h6("Chang, Winston, Joe Cheng, JJ Allaire, Carson Sievert, Barret Schloerke, Yihui Xie, Jeff Allen, Jonathan McPherson, Alan Dipert, and Barbara Borges (2021). shiny: Web Application Framework for R. R package version 1.7.1. https://CRAN.R-project.org/package=shiny"),
              h6("Chang, Winston (2021). shinythemes: Themes for Shiny. R package version 1.2.0. https://CRAN.R-project.org/package=shinythemes"),
+             h6("Garrett Grolemund, Hadley Wickham (2011). Dates and Times Made Easy with lubridate. Journal of Statistical Software, 40(3), 1-25. URL https://www.jstatsoft.org/v40/i03/."),
              h6("Johnston, K., C. Enyart, M. Jenkins, D. Lazarus, and S. Cuadra. 2021. Santa Monica Beach Restoration Pilot Project: Year 5 Annual Report. Report prepared by The Bay Foundation for City of Santa Monica, California Coastal Commission, US Environmental Protection Agency, and California Department of Parks and Recreation. 118 pages."),
              h6("Johnston, K., C. Enyart, K. Alvarez, and H. Weyland. 2020. Santa Monica Beach Restoration Pilot Project: Year 4 Annual Report. Report prepared by The Bay Foundation for City of Santa Monica, California Coastal Commission, US Environmental Protection Agency, and California Department of Parks and Recreation. 100 pages."),
              h6("Johnston, K., M. Grubbs, and C. Enyart. 2019. Santa Monica Beach Restoration Pilot Project: Year 3 Annual Report. Report prepared by The Bay Foundation for City of Santa Monica, California Coastal Commission, US Environmental Protection Agency, and California Department of Parks and Recreation. 88 pages."),
