@@ -166,32 +166,34 @@ ui <- fluidPage(
 tabPanel("Topography Profiles",
          sidebarLayout(
            sidebarPanel(
-             pickerInput(inputId = "season_year", 
+             pickerInput(inputId = "season_year_winter", 
                          label = h4("Select Winter Survey(s)"), 
-                                choices = list("Baseline" = 1, 
-                                               "Winter 2017" = 2,
-                                               "Winter 2018" = 3,
-                                               "Winter 2019" = 4,
-                                               "Winter 2020" = 5),
+                                choices = list("Baseline", 
+                                               "Winter 2017",
+                                               "Winter 2018",
+                                               "Winter 2019",
+                                               "Winter 2020"),
                          options = list(`actions-box` = TRUE),
-                         multiple = TRUE), # end pickerInput 1
+                         multiple = TRUE,
+                         selected = c("Baseline", "Winter 2020")), # end pickerInput 1
 
                           
-             pickerInput(inputId = "season_year", 
+             pickerInput(inputId = "season_year_summer", 
                          label = h4("Select Summer Survey(s)"), 
-                         choices = list("Baseline" = 1, 
-                                        "Summer 2017" = 2,
-                                        "Summer 2018" = 3,
-                                        "Summer 2019" = 4,
-                                        "Summer 2020" = 5,
-                                        "Summer 2021" = 6),
+                         choices = list("Baseline", 
+                                        "Summer 2017",
+                                        "Summer 2018",
+                                        "Summer 2019",
+                                        "Summer 2020",
+                                        "Summer 2021"),
                          options = list(`actions-box` = TRUE),
-                         multiple = TRUE), # end pickerInput 2
+                         multiple = TRUE,
+                         selected = c("Baseline", "Summer 2021")), # end pickerInput 2
              
            
-             h5("These checkboxes select elevation profile data for either winter or summer months within the restoration area. The graphs start from the back of the beach (lefthand side of the graph) to the ocean (righthand side)."),
+             h5("These checkboxes select elevation profile data for either winter (top) or summer (bottom) months within the restoration area. The graphs start from the back of the beach (lefthand side of the graph) to the ocean (righthand side)."),
             
-             h5("Data begin at the baseline in winter of 2016 (bottom line on the graphs) and show an increase in elevation over time, as well as the formation of small dunes. Click through the top dropdown box to select the winter survey data years, and click through the bottom dropdown box to change the selection of summer data years.")
+             h5("Data begin at the baseline in winter of 2016 (bottom line on the graphs) and show an increase in elevation over time, as well as the formation of small dunes. Click through the top dropdown box to select the winter survey data years, and click through the bottom dropdown box to change the selection of summer data years. The starting default visualizes the baseline survey in 2016 for both graphs and the most recent survey for each.")
              
            ), # end sidebarPanel
            
@@ -256,7 +258,7 @@ tabPanel("Bird Species",
           ), # end fluidRow
           
           h5("This graph shows vegetation cover by species over time, beginning just after restoration in 2017, and continuing through five years of surveys through the most recent in 2021. Seven species are native and one (sea rocket) is not native."),
-          h5("INSERT SENTENCE ON HOW TO DO SLIDER BAR")
+          h5("INSERT SENTENCE ON HOW TO DO SLIDER BAR. The graph default displays all years of data.")
           
         ), # end sidebarPanel
         
@@ -324,20 +326,27 @@ tabPanel("Bird Species",
 # This section includes the server logic for the output commands
 server <- function(input, output) {
   
+  season_year_winter_react <- reactive({
+    season_yr <- input$season_year_winter
+
+    message("season year winter react check:", season_yr)
+    x <- elevation_rest %>% filter(season_year %in% season_yr) %>% 
+      filter(season == "Winter")
+    
+    print(head(x))
+    return(x)
+  })
+    
   # Elevation Profile output - winter plot
   output$elevProfile_winter <- renderPlot({
     
-    season_year <- input$season_year
-    distance_m <- input$distance_m
-    elevation_m <- input$elevation_m
-    elevation_rest[elevation_rest$season_year %in% input$season_year,]
     
-    ggplot(data = elevation_winter, aes(x = distance_m, y = elevation_m, 
+    ggplot(data = season_year_winter_react(), aes(x = distance_m, y = elevation_m, 
                                         group = season_year)) +
       ggalt::geom_xspline(aes(color = season_year), size = 1.2) +
       labs(x = "Distance (m)", y = "Elevation (m)", 
            title = "Winter Elevation Profiles") +
-      scale_color_discrete(type = "viridis") +
+      scale_color_viridis_d() +
       theme_classic() +
       theme(plot.title = element_text(hjust = 0.5))
     
@@ -347,11 +356,8 @@ server <- function(input, output) {
   # Elevation Profile output - summer plot
   output$elevProfile_summer <- renderPlot({
     
-    season_year <- input$season_year
-    distance_m <- input$distance_m
-    elevation_m <- input$elevation_m
-    elevation_rest[elevation_rest$season_year %in% input$season_year,]
-    
+    season_year <- input$season_year_summer
+
     ggplot(data = elevation_summer, aes(x = distance_m, y = elevation_m, 
                                         group = season_year)) +
       ggalt::geom_xspline(aes(color = season_year), size = 1.2) +
@@ -385,7 +391,7 @@ server <- function(input, output) {
     ggplot(data = plants, aes(x = date, y = veg_cover_percent), group = species) +
       geom_col(aes(fill = species)) +
       scale_fill_discrete(type = "viridis") +
-      labs(x = "Survey Year / Month",
+      labs(x = "Survey Year",
            y = "Vegetation Cover (%)",
            title = "Vegetation Cover 2016-2021") +
       theme_classic()
