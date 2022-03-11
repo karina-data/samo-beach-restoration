@@ -32,6 +32,7 @@ elevation_summer <- elevation_rest %>%
 
 # Plant cover by sps over all years
 plants <- read_csv(here("samo-beach-restoration", "data", "sps_total_distance.csv")) %>% 
+  mutate(year = mdy(date)) %>% 
   janitor::clean_names() 
 
 
@@ -260,7 +261,7 @@ tabPanel("Bird Species",
           ), # end fluidRow
           
           h5("This graph shows vegetation cover by species over time, beginning just after restoration in 2017, and continuing through five years of surveys through the most recent in 2021. Seven species are native and one (sea rocket) is not native."),
-          h5("INSERT SENTENCE ON HOW TO DO SLIDER BAR. The graph default displays all years of data.")
+          h5("Sliding the bar across the years will change the graph display on the right. The graph default displays all years of data.")
           
         ), # end sidebarPanel
         
@@ -336,8 +337,7 @@ server <- function(input, output) {
     x <- elevation_rest %>% filter(season_year %in% season_yr) %>% 
       filter(season == "Winter")
     
-    print(head(x))
-    return(x)
+
   })
     
   # Elevation Profile output - winter plot
@@ -363,8 +363,8 @@ server <- function(input, output) {
     x <- elevation_rest %>% filter(season_year %in% season_yr) %>% 
       filter(season == "Summer")
     
-    print(head(x))
-    return(x)
+#    print(head(x))
+#    return(x)
   })
   
   
@@ -388,7 +388,7 @@ server <- function(input, output) {
     collapsibleTreeSummary(
       birds,
       hierarchy = input$hierarchy,
-      inputId = "node",
+      inputId = "node"
 #      fill = qualitative_hcl(4, palette = "Dark 3"),
 #      fillByLevel = TRUE
       
@@ -398,15 +398,28 @@ server <- function(input, output) {
   })
   
   
+  # Plant reactive
+  plant_react <- reactive({
+    
+    veg_cover <- input$slider1
+    x <- plants %>% filter(date %in% veg_cover) 
+    
+  })
+  
+#  season_year_summer_react <- reactive({
+#    season_yr <- input$season_year_summer
+    
+#    x <- elevation_rest %>% filter(season_year %in% season_yr) %>% 
+#      filter(season == "Summer")
   
   
   # Plant cover output
   output$plant_cover <- renderPlot({
     
-    ggplot(data = plants, aes(x = date, y = veg_cover_percent), group = species) +
+    ggplot(data = plant_react(), aes(x = date, y = veg_cover_percent), group = species) +
       geom_col(aes(fill = species)) +
       scale_fill_viridis_d() +
-      labs(x = "Survey Year",
+      labs(x = "Survey Event Year",
            y = "Vegetation Cover (%)",
            title = "Vegetation Cover by Species 2016-2021") +
       theme_classic() +
