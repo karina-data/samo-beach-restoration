@@ -34,6 +34,7 @@ elevation_summer <- elevation_rest %>%
 plants <- read_csv(here("samo-beach-restoration", "data", "sps_total_distance2.csv")) %>% 
   mutate(date = mdy(date)) %>% 
   mutate(year = year(date)) %>% 
+  mutate(year = as.integer(year)) %>% 
   janitor::clean_names() 
 
 
@@ -201,6 +202,7 @@ tabPanel("Topography Profiles",
            
            mainPanel(
              plotOutput("elevProfile_winter", height = "225px", width = "700px"),
+             br(),
              plotOutput("elevProfile_summer", height = "225px", width = "700px")
              
            ) # end mainPanel
@@ -254,7 +256,7 @@ tabPanel("Bird Species",
                    sliderInput("slider1", label = h3("Select Year Range"), 
                                min = 2016, 
                                max = 2021, 
-                               value = c(2016,2018),
+                               value = c(2016,2017),
                                sep = "",
                                dragRange = TRUE,
                                animate = TRUE)
@@ -262,13 +264,16 @@ tabPanel("Bird Species",
             
           ), # end fluidRow
           
-          h5("This graph shows vegetation cover by species over time, beginning in the 2016 baseline with no vegetation (zeros on the graph), and continuing through five years of surveys through the most recent in 2021. Seven vegetation species are native and one (sea rocket) is not native."),
-          h5("Sliding the bar across the years will change the graph display on the right. The graph default displays the first two years of data. To animate the graph, click on the 'play' triangle button.")
+          h5("This top graph shows vegetation cover by species over time, beginning in the 2016 baseline with no vegetation (zeros on the graph), and continuing through five years of surveys through the most recent in 2021. Seven vegetation species are native and one (sea rocket) is not native."),
+          h5("Sliding the bar across the years will change the graph display on the right. The graph default displays the first two years of data. To animate the graph, click on the 'play' triangle button."),
+          h5("The bottom graph is static (not changing) and displays total native vegetation cover over time across all surveys.")
           
         ), # end sidebarPanel
         
         mainPanel(
-          plotOutput("plant_cover")
+          plotOutput("plant_cover"),
+          br(),
+          plotOutput("plant_native")
           
           
         ) # end mainPanel
@@ -360,6 +365,7 @@ server <- function(input, output) {
 
   # Elevation summer reactive
   season_year_summer_react <- reactive({
+    
     season_yr <- input$season_year_summer
     
 #    message("season year summer react check:", season_yr)
@@ -405,8 +411,13 @@ server <- function(input, output) {
   plant_react <- reactive({
     
     year_range <- input$slider1
-    x <- plants %>% filter(year %in% year_range) 
     
+    var <- plants %>% filter(year %in% year_range) 
+    
+#        message("plant react check:", year_range)
+
+#        print(head(x))
+#        return(x)
   })
   
   # Plant cover output
@@ -417,6 +428,7 @@ server <- function(input, output) {
       geom_col(aes(fill = species)) +
       scale_fill_viridis_d() +
       scale_y_continuous(limits = c(0, 8)) +
+      scale_x_continuous(breaks = 2016:2021) +
       labs(x = "Survey Event Year",
            y = "Vegetation Cover (%)",
            title = "Vegetation Cover by Species 2016-2021") +
@@ -425,6 +437,24 @@ server <- function(input, output) {
       
   })
   
+  output$plant_native <- renderPlot({
+    
+    native_cov <- plants %>% 
+      filter(native == "native") %>% 
+      group_by(year) %>% 
+      summarize(sum = sum(veg_cover_percent))
+      
+    ggplot(data = native_cov, aes(x = year, y = sum)) +
+      
+      geom_col(fill = "darkblue") +
+      labs(x = "Survey Event Year",
+           y = "Vegetation Cover (%)",
+           title = "Native Total Plant Cover 2016-2021") +
+      theme_classic() +
+      scale_x_continuous(breaks = 2016:2021) +
+      theme(plot.title = element_text(hjust = 0.5))
+   
+  })
 
   output$value <- renderPrint({ input$select })
   

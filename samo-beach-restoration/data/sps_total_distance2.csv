@@ -1,43 +1,43 @@
 date,species,veg cover_percent,native
-12/13/2016,Beach Evening Primrose,0,native
-12/13/2016,Beach Bur Sage,0,native
-12/13/2016,Beach Saltbush,0,native
-12/13/2016,Red Sand Verbena,0,native
-12/13/2016,Pink Sand Verbena,0,native
-12/13/2016,Woolly Heads,0,native
-12/13/2016,Sea Rocket,0,non-native
+12/13/2016,Beach Evening Primrose,0.00,native
+12/13/2016,Beach Bur Sage,0.00,native
+12/13/2016,Beach Saltbush,0.00,native
+12/13/2016,Red Sand Verbena,0.00,native
+12/13/2016,Pink Sand Verbena,0.00,native
+12/13/2016,Woolly Heads,0.00,native
+12/13/2016,Sea Rocket,0.00,non-native
 9/20/2017,Beach Evening Primrose,0.75,native
 9/20/2017,Beach Bur Sage,0.44,native
 9/20/2017,Beach Saltbush,0.46,native
 9/20/2017,Red Sand Verbena,0.46,native
-9/20/2017,Pink Sand Verbena,0,native
-9/20/2017,Woolly Heads,0,native
-9/20/2017,Sea Rocket,0,non-native
+9/20/2017,Pink Sand Verbena,0.00,native
+9/20/2017,Woolly Heads,0.00,native
+9/20/2017,Sea Rocket,0.00,non-native
 5/24/2018,Beach Evening Primrose,1.11,native
 5/24/2018,Beach Bur Sage,0.08,native
 5/24/2018,Beach Saltbush,0.61,native
-5/24/2018,Red Sand Verbena,0.4,native
-5/24/2018,Pink Sand Verbena,0,native
+5/24/2018,Red Sand Verbena,0.40,native
+5/24/2018,Pink Sand Verbena,0.00,native
 5/24/2018,Woolly Heads,0.14,native
 5/24/2018,Sea Rocket,0.04,non-native
 5/21/2019,Beach Evening Primrose,1.11,native
-5/21/2019,Beach Bur Sage,0.2,native
+5/21/2019,Beach Bur Sage,0.20,native
 5/21/2019,Beach Saltbush,0.95,native
-5/21/2019,Red Sand Verbena,0.2,native
+5/21/2019,Red Sand Verbena,0.20,native
 5/21/2019,Pink Sand Verbena,0.05,native
-5/21/2019,Woolly Heads,0,native
-5/21/2019,Sea Rocket,0,non-native
+5/21/2019,Woolly Heads,0.00,native
+5/21/2019,Sea Rocket,0.00,non-native
 7/24/2020,Beach Evening Primrose,1.45,native
 7/24/2020,Beach Bur Sage,0.19,native
 7/24/2020,Beach Saltbush,1.11,native
 7/24/2020,Red Sand Verbena,0.46,native
 7/24/2020,Pink Sand Verbena,0.04,native
 7/24/2020,Woolly Heads,0.03,native
-7/24/2020,Sea Rocket,0,non-native
+7/24/2020,Sea Rocket,0.00,non-native
 8/13/2021,Beach Evening Primrose,7.36,native
 8/13/2021,Beach Bur Sage,0.38,native
 8/13/2021,Beach Saltbush,1.85,native
 8/13/2021,Red Sand Verbena,4.16,native
-8/13/2021,Pink Sand Verbena,0,native
-8/13/2021,Woolly Heads,0,native
-8/13/2021,Sea Rocket,0,non-native
+8/13/2021,Pink Sand Verbena,0.00,native
+8/13/2021,Woolly Heads,0.00,native
+8/13/2021,Sea Rocket,0.00,non-native
