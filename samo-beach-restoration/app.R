@@ -252,7 +252,9 @@ tabPanel("Bird Species",
                    sliderInput("slider1", label = h3("Select Year Range"), 
                                min = 2017, 
                                max = 2021, 
-                               value = 2021)
+                               value = 2021,
+                               sep = "",
+                               dragRange = TRUE)
             )
             
           ), # end fluidRow
@@ -326,10 +328,11 @@ tabPanel("Bird Species",
 # This section includes the server logic for the output commands
 server <- function(input, output) {
   
+  # Elevation winter reactive
   season_year_winter_react <- reactive({
     season_yr <- input$season_year_winter
 
-    message("season year winter react check:", season_yr)
+#    message("season year winter react check:", season_yr)
     x <- elevation_rest %>% filter(season_year %in% season_yr) %>% 
       filter(season == "Winter")
     
@@ -352,22 +355,32 @@ server <- function(input, output) {
     
   })
 
+  # Elevation summer reactive
+  season_year_summer_react <- reactive({
+    season_yr <- input$season_year_summer
+    
+#    message("season year summer react check:", season_yr)
+    x <- elevation_rest %>% filter(season_year %in% season_yr) %>% 
+      filter(season == "Summer")
+    
+    print(head(x))
+    return(x)
+  })
+  
   
   # Elevation Profile output - summer plot
   output$elevProfile_summer <- renderPlot({
     
-    season_year <- input$season_year_summer
-
-    ggplot(data = elevation_summer, aes(x = distance_m, y = elevation_m, 
-                                        group = season_year)) +
+    ggplot(data = season_year_summer_react(), aes(x = distance_m, y = elevation_m, 
+                                                  group = season_year)) +
       ggalt::geom_xspline(aes(color = season_year), size = 1.2) +
-      labs(x = "Distance (m)", y = "Elevation (m)",
+      labs(x = "Distance (m)", y = "Elevation (m)", 
            title = "Summer Elevation Profiles") +
-      scale_color_discrete(type = "viridis") +
+      scale_color_viridis_d() +
       theme_classic() +
       theme(plot.title = element_text(hjust = 0.5))
+    
   })
-  
   
 
   # Bird Collapsible Tree output
@@ -385,16 +398,20 @@ server <- function(input, output) {
   })
   
   
+  
+  
   # Plant cover output
   output$plant_cover <- renderPlot({
     
     ggplot(data = plants, aes(x = date, y = veg_cover_percent), group = species) +
       geom_col(aes(fill = species)) +
-      scale_fill_discrete(type = "viridis") +
+      scale_fill_viridis_d() +
       labs(x = "Survey Year",
            y = "Vegetation Cover (%)",
-           title = "Vegetation Cover 2016-2021") +
-      theme_classic()
+           title = "Vegetation Cover by Species 2016-2021") +
+      theme_classic() +
+      theme(plot.title = element_text(hjust = 0.5))
+    
     
   })
   
