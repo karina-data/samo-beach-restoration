@@ -31,8 +31,9 @@ elevation_summer <- elevation_rest %>%
   filter(season == "Summer")
 
 # Plant cover by sps over all years
-plants <- read_csv(here("samo-beach-restoration", "data", "sps_total_distance.csv")) %>% 
-  mutate(year = mdy(date)) %>% 
+plants <- read_csv(here("samo-beach-restoration", "data", "sps_total_distance2.csv")) %>% 
+  mutate(date = mdy(date)) %>% 
+  mutate(year = year(date)) %>% 
   janitor::clean_names() 
 
 
@@ -251,17 +252,18 @@ tabPanel("Bird Species",
                    
                    # Slider bar 
                    sliderInput("slider1", label = h3("Select Year Range"), 
-                               min = 2017, 
+                               min = 2016, 
                                max = 2021, 
-                               value = 2021,
+                               value = c(2016,2018),
                                sep = "",
-                               dragRange = TRUE)
+                               dragRange = TRUE,
+                               animate = TRUE)
             )
             
           ), # end fluidRow
           
-          h5("This graph shows vegetation cover by species over time, beginning just after restoration in 2017, and continuing through five years of surveys through the most recent in 2021. Seven species are native and one (sea rocket) is not native."),
-          h5("Sliding the bar across the years will change the graph display on the right. The graph default displays all years of data.")
+          h5("This graph shows vegetation cover by species over time, beginning in the 2016 baseline with no vegetation (zeros on the graph), and continuing through five years of surveys through the most recent in 2021. Seven vegetation species are native and one (sea rocket) is not native."),
+          h5("Sliding the bar across the years will change the graph display on the right. The graph default displays the first two years of data. To animate the graph, click on the 'play' triangle button.")
           
         ), # end sidebarPanel
         
@@ -354,6 +356,7 @@ server <- function(input, output) {
       theme(plot.title = element_text(hjust = 0.5))
     
   })
+  
 
   # Elevation summer reactive
   season_year_summer_react <- reactive({
@@ -401,35 +404,28 @@ server <- function(input, output) {
   # Plant reactive
   plant_react <- reactive({
     
-    veg_cover <- input$slider1
-    x <- plants %>% filter(date %in% veg_cover) 
+    year_range <- input$slider1
+    x <- plants %>% filter(year %in% year_range) 
     
   })
-  
-#  season_year_summer_react <- reactive({
-#    season_yr <- input$season_year_summer
-    
-#    x <- elevation_rest %>% filter(season_year %in% season_yr) %>% 
-#      filter(season == "Summer")
-  
   
   # Plant cover output
   output$plant_cover <- renderPlot({
     
-    ggplot(data = plant_react(), aes(x = date, y = veg_cover_percent), group = species) +
+    ggplot(data = plant_react(), aes(x = year, y = veg_cover_percent), 
+           group = species) +
       geom_col(aes(fill = species)) +
       scale_fill_viridis_d() +
+      scale_y_continuous(limits = c(0, 8)) +
       labs(x = "Survey Event Year",
            y = "Vegetation Cover (%)",
            title = "Vegetation Cover by Species 2016-2021") +
       theme_classic() +
       theme(plot.title = element_text(hjust = 0.5))
-    
-    
+      
   })
   
-  
-  
+
   output$value <- renderPrint({ input$select })
   
 } # end server function
